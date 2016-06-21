@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>个人中心</title>
+  <meta name="keywords" content="" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta content="telephone=no" name="format-detection" />
+  <link rel="stylesheet" href="../css/public.css">
+  <link rel="stylesheet" href="../css/stylewx.css">
+</head>
+<body>
+  <div class="wxPage pcPage">
+  	<a class="pagebox" href="perCenterEdit.html">
+  		<div class="page-box pc-user clearfix">
+  			<div class="pc-user-tx"><img src="../images/pc_toux.png" alt=""></div>
+
+        <div class="pc-user-info">
+          <h2>永浩可爱多</h2>
+          <h3>奥迪A6</h3>
+        </div>
+          <img src="../images/icon_zjt.png" alt="" class="pc-jiant">
+
+        <!-- <a href="perCenterEdit.html">
+          <div class="pc-user-info">
+            <h2>永浩可爱多</h2>
+            <h3>奥迪A6</h3>
+          </div>
+          <img src="../images/icon_zjt.png" alt="" class="pc-jiant"></a> -->
+  		</div>
+  	</a>
+  	<div class="pagebox mt15">
+  		<div class="pc-num clearfix">
+  			<ul>
+  				<li> <a href="orderdetails.html"><h3>2</h3><p>待付款</p></a></li>
+  				<li><a href="orderdetails.html"><h3>1</h3><p>待发货</p></a></li>
+  				<li><a href="orderdetails.html"><h3>6</h3><p>待收货</p></a></li>
+  			</ul>
+  		</div>
+  		<div class="pc-gn">
+        <div class="pc-gn-box clearfix">
+          <a href="orderdetails.html">
+            <div class="img-gn gn-order"></div>
+            <div class="pc-gn-name">
+              <span>全部订单</span>
+            </div>
+            <img src="../images/icon_zjt.png" alt=""></a>
+        </div>
+        <div class="pc-gn-box clearfix">
+          <a href="javascript:;">
+            <div class="img-gn gn-buyCar"></div>
+            <div class="pc-gn-name">
+              <span>购物车</span>
+            </div>
+            <img src="../images/icon_zjt.png" alt=""></a>
+        </div>
+        <div class="pc-gn-box clearfix">
+          <a href="javascript:;">
+            <div class="img-gn gn-mydd"></div>
+            <div class="pc-gn-name">
+              <span>我的预约</span>
+            </div>
+            <img src="../images/icon_zjt.png" alt=""></a>
+        </div>
+  		</div>
+  	</div>
+    <div class="pagebox mt15 pagebox-nob">
+      <div class="pc-gn">
+        <div class="pc-gn-box clearfix">
+          <a href="https://www.baidu.com/">
+            <div class="img-gn gn-jy"></div>
+
+            <div class="pc-gn-name">
+              <span>我的消息</span>
+            </div>
+            <img src="../images/icon_zjt.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="pagebox pagebox-nob mt15">
+      <div class="pc-gn">
+        <div class="pc-gn-box clearfix">
+          <a href="javascript:;">
+            <div class="img-gn gn-xx"></div>
+
+            <div class="pc-gn-name">
+              <span>商城主页</span>
+            </div>
+            <img src="../images/icon_zjt.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

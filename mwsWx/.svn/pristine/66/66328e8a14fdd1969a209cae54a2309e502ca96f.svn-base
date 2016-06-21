@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+  		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  		<meta content="yes" name="apple-mobile-web-app-capable" />
+  		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  		<meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="../css/stylewx.css">
+		<title>安装门店</title>
+	</head>
+	<body>
+	<div class="address-info">
+		<!--门店地址选择-->	
+		<div class="sun-bale-tab install-top">
+			<ul class="clearfix">
+				<li>
+					<select>
+						<option>广东省</option>
+						<option>湖北省</option>
+						<option>湖南省</option>
+					</select>
+				</li>
+				<li>
+					<select>
+						<option>克孜勒苏柯尔克孜自治州</option>
+						<option>所有城市</option>
+						<option>深圳市</option>
+					</select>
+				</li>
+				<li>
+					<select>
+						<option>所有区域</option>
+						<option>克孜勒苏柯尔克孜自治州</option>
+						<option>深圳市</option>
+					</select>
+				</li>
+			</ul>
+		</div>
+		<!--安装地点列表-->	
+		<div class="installList">
+			<div class="per-info storeInfo">
+				<div>
+					<a href="javascript:;" class="clearfix">
+						<div class="search-img">
+							<img src="../images/pc_toux.png"></div>
+						<div class="search-div message-div">
+							<div class="installTitle clearfix">
+								<p class="store-name">深圳鹏达汽修厂</p>
+								<span class="lnk-installMap">地图</span>
+							</div>
+							<p class="install-addDetails">
+								地址： <em>广东省深圳市南山区清华信息港科研楼1105室</em>
+							</p>
+							<p class="open-time">
+								<i class="icon-ps"></i><em>0.5km 离我最近</em>
+							</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="per-info storeInfo">
+				<div>
+					<a href="javascript:;" class="clearfix">
+						<div class="search-img">
+							<img src="../images/pc_toux.png"></div>
+						<div class="search-div message-div">
+							<div class="installTitle clearfix">
+								<p class="store-name">深圳鹏达汽修厂</p>
+								<span class="lnk-installMap">地图</span>
+							</div>
+							<p class="install-addDetails">
+								地址： <em>广东省深圳市南山区清华信息港科研楼1105室</em>
+							</p>
+							<p class="open-time">
+								<i class="icon-ps"></i><em>0.5km 离我最近</em>
+							</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="per-info storeInfo">
+				<div>
+					<a href="javascript:;" class="clearfix">
+						<div class="search-img">
+							<img src="../images/pc_toux.png"></div>
+						<div class="search-div message-div">
+							<div class="installTitle clearfix">
+								<p class="store-name">深圳鹏达汽修厂</p>
+								<span class="lnk-installMap">地图</span>
+							</div>
+							<p class="install-addDetails">
+								地址： <em>广东省深圳市南山区清华信息港科研楼1105室</em>
+							</p>
+							<p class="open-time">
+								<i class="icon-ps"></i><em>0.5km 离我最近</em>
+							</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="per-info storeInfo">
+				<div>
+					<a href="javascript:;" class="clearfix">
+						<div class="search-img">
+							<img src="../images/pc_toux.png"></div>
+						<div class="search-div message-div">
+							<div class="installTitle clearfix">
+								<p class="store-name">深圳鹏达汽修厂</p>
+								<span class="lnk-installMap">地图</span>
+							</div>
+							<p class="install-addDetails">
+								地址： <em>广东省深圳市南山区清华信息港科研楼1105室</em>
+							</p>
+							<p class="open-time">
+								<i class="icon-ps"></i><em>0.5km 离我最近</em>
+							</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="per-info storeInfo">
+				<div>
+					<a href="javascript:;" class="clearfix">
+						<div class="search-img">
+							<img src="../images/pc_toux.png"></div>
+						<div class="search-div message-div">
+							<div class="installTitle clearfix">
+								<p class="store-name">深圳鹏达汽修厂</p>
+								<span class="lnk-installMap">地图</span>
+							</div>
+							<p class="install-addDetails">
+								地址： <em>广东省深圳市南山区清华信息港科研楼1105室</em>
+							</p>
+							<p class="open-time">
+								<i class="icon-ps"></i><em>0.5km 离我最近</em>
+							</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="per-info storeInfo">
+				<div>
+					<a href="javascript:;" class="clearfix">
+						<div class="search-img">
+							<img src="../images/pc_toux.png"></div>
+						<div class="search-div message-div">
+							<div class="installTitle clearfix">
+								<p class="store-name">深圳鹏达汽修厂</p>
+								<span class="lnk-installMap">地图</span>
+							</div>
+							<p class="install-addDetails">
+								地址： <em>广东省深圳市南山区清华信息港科研楼1105室</em>
+							</p>
+							<p class="open-time">
+								<i class="icon-ps"></i><em>0.5km 离我最近</em>
+							</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>
+
+<script src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready( function(){
+		//更改收件人弹窗
+
+		 //选择
+	    $('.installBottom').click(function(){
+	    	$('.pop-overlay').show().animate({opacity:0.7},450);
+	    	$('.changeContact').show();
+	    });
+	    //关闭弹窗
+	    $('.change-cancel').click(function(){
+	    	$('.pop-overlay').animate({opacity:0},500,function(){
+	    		$('.pop-overlay').hide();
+	    	});
+	    	$('.changeContact').hide();
+	    });
+
+	    //按钮
+	    $('.btn-box').on('click','a',function(){
+	    	$(this).addClass('active');
+	    	$(this).siblings().removeClass('active');
+	    })
+
+
+	})
+</script>

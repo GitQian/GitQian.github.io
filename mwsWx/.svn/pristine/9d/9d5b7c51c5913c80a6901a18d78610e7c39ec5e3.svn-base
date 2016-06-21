@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>个人中心</title>
+  <meta name="keywords" content="" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta content="telephone=no" name="format-detection" />
+  <link rel="stylesheet" href="../css/public.css">
+  <link rel="stylesheet" href="../css/stylewx.css">
+</head>
+<body>
+  <div class="wxPage pcPage">
+  	<div class="pagebox">
+      <div class="pc-edit-toux clearfix">
+        <div class="edit-name"><span>头像</span></div>
+        <div class="edit-img-toux"><img src="../images/wx/pc_toux.png" alt=""></div>
+      </div>
+      <div class="pc-edit-info">
+        <table>
+          <tr style="border-bottom:15px solid #EBEBEB;">
+            <td>昵称</td>
+            <td>永浩可爱多</td>
+          </tr>
+          <tr>
+            <td>车型</td>
+            <td>
+              <a href="#"><span></span><img src="../images/wx/icon_zjt.png" alt=""></a>
+            </td>
+          </tr>
+          <tr>
+            <td>车牌号</td>
+            <td><input type="text" placeholder="车牌号"></td>
+          </tr>
+          <tr>
+            <td>车主名</td>
+            <td><input type="text" placeholder="行驶证上的车主名"/></td>
+          </tr>
+          <tr>
+            <td>车架号</td>
+            <td><input type="text" placeholder="您的车架号"/></td>
+          </tr>
+          <tr>
+            <td>上牌时间</td>
+            <td><a href="#"><span>车牌上牌日期</span><img src="../images/wx/icon_zjt.png" alt=""></a></td>
+          </tr>
+          <tr>
+            <td>驾照类型</td>
+            <td><a href="#"><span>C</span><img src="../images/wx/icon_zjt.png" alt=""></a></td>
+          </tr>
+          <tr>
+            <td>驾照领证时间</td>
+            <td><a href="#"><span>初次领取驾照日期</span><img src="../images/wx/icon_zjt.png" alt=""></a></td>
+          </tr>
+        </table>
+      </div>
+  	</div>
+  	<div class="pagebox mt15">
+      
+  	</div>
+    <div class="page-btn">
+      <p><a href="#">保存</a></p>
+    </div>
+  </div>
+</body>
+</html>

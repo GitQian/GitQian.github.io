@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<script type="text/javascript" src="../js/lib/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/stylewx.css">
+		<title>选择车型</title>
+		<script type="text/javascript">
+		$(function(){
+   		$('.chooseleft').css({'height':$(window).height()-50});
+		})
+		</script>
+	</head>
+	<body>
+		<div class="choosePage">
+			<div class="choose-search">
+				<div class="sun-seacher">
+					<a href="#"><img src="../images/index_33.png" width="20px" height="20px"></a>
+					<input name="Input" type="text" value="您可搜索本店商品" onfocus="if (value =='您可搜索本店商品'){value =''}" onblur="if (value ==''){value='您可搜索本店商品'}">
+				</div>
+			</div>
+			<div class="chooseInfo">
+				<div class="c-title" id="A">A</div>
+				<ul>
+					<li><a href="javascript:;"><img src="../images/carlogo/aodi.png" alt=""><span>奥迪</span></a></li>
+					<li><a href="javascript:;"><img src="../images/carlogo/asdmd.png" alt=""><span>阿斯顿 马丁</span></a></li>
+				</ul>
+				<div class="c-title" id="B">B</div>
+				<ul>
+					<li><a href="javascript:;"><img src="../images/carlogo/babs.png" alt=""><span>巴斯博</span></a></li>
+					<li><a href="javascript:;"><img src="../images/carlogo/baom.png" alt=""><span>宝马</span></a></li>
+					<li><a href="javascript:;"><img src="../images/carlogo/baosj.png" alt=""><span>保时捷</span></a></li>
+					<li><a href="javascript:;"><img src="../images/carlogo/benc.png" alt=""><span>奔驰</span></a></li>
+					<li><a href="javascript:;"><img src="../images/carlogo/bent.png" alt=""><span>本田</span></a></li>
+					<li><a href="javascript:;"><img src="../images/carlogo/benteng.png" alt=""><span>奔腾</span></a></li>
+					<li><a href="javascript:;"><img src="../images/carlogo/binli.png" alt=""><span>宾利</span></a></li>
+				</ul>
+				<div class="c-title" id="C">C</div>
+				<ul>
+					<li><a href="javascript:;"><img src="../images/carlogo/changa.png" alt=""><span>长安</span></a></li>
+					<li><a href="javascript:;"><img src="../images/carlogo/changc.png" alt=""><span>长城</span></a></li>
+				</ul>
+				<div class="c-title" id="D">D</div>
+				<ul>
+					<li><a href="javascript:;"><img src="../images/carlogo/dfrc.png" alt=""><span>东风日产</span></a></li>
+					<li><a href="javascript:;"><img src="../images/carlogo/dfxk.png" alt=""><span>东风小康</span></a></li>
+					<li><a href="javascript:;"><img src="../images/carlogo/dongf.png" alt=""><span>东风</span></a></li>
+				</ul>
+			</div>
+			<div class="chooseleft">
+				<ul>
+	    		<li><a href="#A">A</a></li>
+	    		<li><a href="#B">B</a></li>
+	    		<li><a href="#C">C</a></li>
+	    		<li><a href="#D">D</a></li>
+	    		<li><a href="#E">E</a></li>
+	    		<li><a href="#F">F</a></li>
+	    		<li><a href="#G">G</a></li>
+	    		<li><a href="#H">H</a></li>
+	    		<li><a href="#I">I</a></li>
+	    		<li><a href="#J">J</a></li>
+	    		<li><a href="#K">K</a></li>
+	    		<li><a href="#L">L</a></li>
+	    		<li><a href="#M">M</a></li>
+	    		<li><a href="#N">N</a></li>
+	    		<li><a href="#O">O</a></li>
+	    		<li><a href="#P">P</a></li>
+	    		<li><a href="#Q">Q</a></li>
+	    		<li><a href="#R">R</a></li>
+	    		<li><a href="#S">S</a></li>
+	    		<li><a href="#T">T</a></li>
+	    		<li><a href="#U">U</a></li>
+	    		<li><a href="#V">V</a></li>
+	    		<li><a href="#W">W</a></li>
+	    		<li><a href="#X">X</a></li>
+	    		<li><a href="#Y">Y</a></li>
+	    		<li><a href="#Z">Z</a></li>
+	    	</ul>
+			</div>
+		</div>
+	</body>
+</html>

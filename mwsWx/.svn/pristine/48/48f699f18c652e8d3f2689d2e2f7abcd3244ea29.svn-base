@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+  		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  		<meta content="yes" name="apple-mobile-web-app-capable" />
+  		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  		<meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="../css/stylewx.css">
+        <link rel="stylesheet" type="text/css" href="../css/next.css" />
+		<title>订单详情页</title>
+	</head>
+	<body>
+		<div class="sun-orderdetails orderDetailsTop">
+			<div class="sun-details-state">
+				<p>待发货</p>
+				<span>3天2时未付款订单取消</span>
+			</div>
+			<div class="sun-details-states">
+				<div class="sun-detailes">
+					<p>张三 &nbsp;&nbsp;&nbsp;&nbsp; 130 5642 2356</p>
+	                 <p>广东省深圳市南山区西丽街道清华信息港A座123号(安装点：0553-52665485)</p>
+				</div>
+			</div>
+			<div class="sun-details-states sun-install" style="margin-top: 10px;">
+				<div class="sun-detailes  clearfix">
+					<div class="clearfix"><span>您的安装点</span>
+					<a href="#"><img src="../images/jt.png"></a></div>
+					<div class="clearfix"><span>需安装m件，已安装n件</span>
+					<a href="#"><img src="../images/jt.png"></a></div>
+				</div>
+			<!-- 	<div class="sun-bottom clearfix">
+					<a href="#"><img src="../images/sunicon_03.png" width="15px" height="15px"> 地 图</a>
+					<a href="#"><img src="../images/sunicon_06.png" width="15px" height="15px"> 导航到店</a>
+				</div> -->
+			</div>
+		</div>
+		<div class="sun-bale-order orderDetailsWrap">
+				<!-- <div class="sun-bale-name" style="height: 35px;">
+					<div>
+						<p>店铺：深圳鹏达汽车厂</p>
+					</div>
+				</div> -->
+				<div class="sun-bale-order1">
+					<ul>
+						<li>
+							<a href="javascript:;" class="clearfix">
+								<div class="sun-order-img"><img src="../images/search_03.png"></div>
+								<div class="sun-order-pro">
+									<p>宝德琥珀汽车美容72元洗车优惠券</p>
+									<span>4G版</span><span>套餐2</span>
+								</div>
+								<div class="sun-order-price">
+									<span>￥72.00</span>
+									<span class="sun-span1">x1</span>
+								</div>
+							</a>
+							<i class="return-status returning"></i>
+						</li>
+						<li>
+							<a href="javascript:;" class="clearfix">
+								<div class="sun-order-img"><img src="../images/search_03.png"></div>
+								<div class="sun-order-pro">
+									<p>宝德琥珀汽车美容72元洗车优惠券</p>
+									<span>4G版</span><span>套餐2</span>
+								</div>
+								<div class="sun-order-price">
+									<span>￥72.00</span>
+									<span class="sun-span1">x1</span>
+								</div>
+							</a>
+							<div class="sun-all clearfix addSunInfo">
+								<span class="clearfix"><p class="sun-all-p1"><span>运费：</span><span>免运费</span>
+								</p><p class="sun-all-p2 org">实付 ￥1766.00</p></span>
+							</div>
+							<i class="return-status returnSuccess"></i>
+						</li>
+						<li>
+							<a href="javascript:;" class="clearfix">
+								<div class="sun-order-img"><img src="../images/search_03.png"></div>
+								<div class="sun-order-pro">
+									<p>宝德琥珀汽车美容72元洗车优惠券</p>
+									<span>4G版</span><span>套餐2</span>
+								</div>
+								<div class="sun-order-price">
+									<span>￥72.00</span>
+									<span class="sun-span1">x1</span>
+								</div>
+							</a>
+							
+							<i class="return-status returnFail"></i>
+						</li>
+					</ul>
+				</div>
+				<div class="sun-all clearfix">
+					<div class="clearfix"><p class="sun-all-p1"><span>共2件商品</span><span>免运费</span>
+					<p class="sun-all-p2 org">实付 ￥1766.00</p></div>
+					<p>发票信息:不开发票</p>
+					<p>备注：无</p>
+				</div>
+				<!-- <div class="sun-handle sun-detailes-hh">
+					<b>不开发票</b>
+				</div>
+				<div class="sun-handle sun-detailes-hh">
+					<span>备注：无</span>
+				</div> -->
+				<div class="sun-detaile-time">
+					<p>订单编号：8554455252232</p>
+					<p>下单时间：2015-08-30  15:50:51</p>
+					<p>付款时间：2015-08-30  15:50:51</p>
+					<p>发货时间：2015-08-30  15:50:51</p>
+					<p>收货时间：2015-08-30  15:50:51</p>
+				</div>
+				<div class="sun-detailes-bottom">
+					<a href="#">取消订单</a>
+					<a href="#">查看物流</a>
+					<a href="#">确认收货</a>
+				</div>
+			</div>
+	</body>
+</html>

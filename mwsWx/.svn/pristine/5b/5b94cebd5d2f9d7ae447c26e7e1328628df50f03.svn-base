@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+  		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  		<meta content="yes" name="apple-mobile-web-app-capable" />
+  		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  		<meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="../css/stylewx.css">
+        <link rel="stylesheet" type="text/css" href="../css/next.css" />
+		<title>全部订单</title>
+	</head>
+	<body>
+		<div accesskey="sun-bale" class="orderWrap wx-wrap">
+		   <!--头部-->
+			<div class="sun-bale-tab">
+				<div class="sun-bale-tab1">
+					<ul>
+						<li ><span class="active">全部订单</span></li>
+						<li><span>待付款</span></li>
+						<li><span>待发货</span></li>
+						<li><span>待收货</span></li>
+					</ul>
+				</div>
+			</div>
+			<!--已完成订单-->
+			<div class="sun-bale-order">
+				<div class="sun-bale-name clearfix ">
+					<div>
+						<!-- <p>店铺：深圳鹏达汽车厂</p> -->
+						<p>订单号：1101010101</p>
+					</div>
+					<span>已完成</span>
+				</div>
+				<div class="sun-bale-order1">
+					<ul>
+						<li>
+							<a href="javascript:;" class="clearfix">
+								<div class="sun-order-img"><img src="../images/search_03.png"></div>
+								<div class="sun-order-pro">
+									<p>宝德琥珀汽车美容72元洗车优惠券宝德琥珀汽车美容72元洗车优惠券宝德琥珀汽车美容72元洗车优惠券宝德琥珀汽车美容72元洗车优惠券宝德琥珀汽车美容72元洗车优惠券</p>
+									<span>4G版</span><span>套餐2</span>
+								</div>
+								<div class="sun-order-price">
+									<span>￥72.00</span>
+									<span class="sun-span1">x1</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" class="clearfix">
+								<div class="sun-order-img"><img src="../images/search_03.png"></div>
+								<div class="sun-order-pro">
+									<p>宝德琥珀汽车美容72元洗车优惠券</p>
+									<span>4G版</span><span>套餐2</span>
+								</div>
+								<div class="sun-order-price">
+									<span>￥72.00</span>
+									<span class="sun-span1">x1</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="sun-all clearfix">
+					<p class="sun-all-p1"><span>共2件商品</span><span>免运费</span></p>
+					<p class="sun-all-p2">实付 ￥1766.00</p>
+				</div>
+				<div class="sun-handle clearfix">
+					<a href="#">查看物流</a>
+					<a href="#">申请退款</a>
+				</div>
+			</div>
+			<!--退款中订单-->
+			<div class="sun-bale-order">
+				<div class="sun-bale-name clearfix">
+					<div>
+						<!-- <p>店铺：深圳鹏达汽车厂</p> -->
+						<p>订单号：1101010101</p>
+					</div>
+					<span>退款中</span>
+				</div>
+				<div class="sun-bale-order1">
+					<ul>
+						<li>
+							<a href="javascript:;" class="clearfix">
+								<div class="sun-order-img"><img src="../images/search_03.png"></div>
+								<div class="sun-order-pro">
+									<p>宝德琥珀汽车美容72元洗车优惠券</p>
+									<span>4G版</span><span>套餐2</span>
+								</div>
+								<div class="sun-order-price">
+									<span>￥72.00</span>
+									<span class="sun-span1">x1</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="sun-all clearfix">
+					<p class="sun-all-p1"><span>共2件商品</span><span>免运费</span></p>
+					<p class="sun-all-p2">实付 ￥1766.00</p>
+				</div>
+				<div class="sun-handle clearfix">
+					<a href="javascript:;">退款详情</a>
+				</div>
+			</div>
+			<!--待付款订单-->
+			<div class="sun-bale-order">
+				<div class="sun-bale-name clearfix">
+					<div>
+						<!-- <p>店铺：深圳鹏达汽车厂</p> -->
+						<p>订单号：1101010101</p>
+					</div>
+					<span>待付款</span>
+				</div>
+				<div class="sun-bale-order1">
+					<ul>
+						<li>
+							<a href="javascript:;" class="clearfix">
+								<div class="sun-order-img"><img src="../images/search_03.png"></div>
+								<div class="sun-order-pro">
+									<p>宝德琥珀汽车美容72元洗车优惠券</p>
+									<span>4G版</span><span>套餐2</span>
+								</div>
+								<div class="sun-order-price">
+									<span>￥72.00</span>
+									<span class="sun-span1">x1</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="sun-all clearfix">
+					<p class="sun-all-p1"><span>共2件商品</span><span>免运费</span></p>
+					<p class="sun-all-p2">实付 ￥1766.00</p>
+				</div>
+				<div class="sun-handle clearfix">
+					<a href="javascript:;" class="sun-cancelPay">取消订单</a>
+					<a href="#javascript:;" class="sun-pay">付款</a>
+				</div>
+			</div>
+			<!--待发货订单-->
+			<div class="sun-bale-order">
+				<div class="sun-bale-name clearfix">
+					<div>
+						<!-- <p>店铺：深圳鹏达汽车厂</p> -->
+						<p>订单号：1101010101</p>
+					</div>
+					<span>待发货</span>
+				</div>
+				<div class="sun-bale-order1">
+					<ul>
+						<li>
+							<a href="javascript:;" class="clearfix">
+								<div class="sun-order-img"><img src="../images/search_03.png"></div>
+								<div class="sun-order-pro">
+									<p>宝德琥珀汽车美容72元洗车优惠券</p>
+									<span>4G版</span><span>套餐2</span>
+								</div>
+								<div class="sun-order-price">
+									<span>￥72.00</span>
+									<span class="sun-span1">x1</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="sun-all clearfix">
+					<p class="sun-all-p1"><span>共2件商品</span><span>免运费</span></p>
+					<p class="sun-all-p2">实付 ￥1766.00</p>
+				</div>
+				<div class="sun-handle clearfix">
+					<a href="returnOrder.html">申请退款</a>
+				</div>
+			</div>
+			<!--待收货-->
+			<div class="sun-bale-order">
+				<div class="sun-bale-name clearfix">
+					<div>
+						<!-- <p>店铺：深圳鹏达汽车厂</p> -->
+						<p>订单号：1101010101</p>
+					</div>
+					<span>待收货</span>
+				</div>
+				<div class="sun-bale-order1">
+					<ul>
+						<li>
+							<a href="javascript:;" class="clearfix">
+								<div class="sun-order-img"><img src="../images/search_03.png"></div>
+								<div class="sun-order-pro">
+									<p>宝德琥珀汽车美容72元洗车优惠券</p>
+									<span>4G版</span><span>套餐2</span>
+								</div>
+								<div class="sun-order-price">
+									<span>￥72.00</span>
+									<span class="sun-span1">x1</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="sun-all clearfix">
+					<p class="sun-all-p1"><span>共2件商品</span><span>免运费</span></p>
+					<p class="sun-all-p2">实付 ￥1766.00</p>
+				</div>
+				<div class="sun-handle clearfix">
+					<a href="javascript:;">查看物流</a>
+					<a href="javascript:;" class="btn-sureReceive">确认收货</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<!--取消付款-->
+<div class="pop-overlay" style="display:none"></div>
+<div class="popup pop-orderCancer changeContact" style="display: none">
+  <div class="pop-content">
+    <div class="ct-cancel">
+    	<h2 class="pop-title">取消订单</h2>
+    	<div class="pop-tips">
+    		<p>确定取消订单吗？</p>
+    	</div>
+    </div>
+    <div class="ct-sureRec" style="display:none">
+    	<h2 class="pop-title">确认收货</h2>
+    	<div class="pop-tips">
+    		<p>确定收货吗？请确保收到商品后再确认收货。</p>
+    	</div>
+    </div>
+    
+    <div class="btn-box clearfix">
+    	<a href="javascript:;" class="change-cancel">放弃</a>
+    	<a href="javascript:;" class="change-sure active">确定</a>
+    </div>
+  
+  </div>
+</div>
+
+<script src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+
+		 //放弃付款
+	    $('.sun-cancelPay').click(function(){
+	    	$('body').css('overflow','hidden');
+	    	$('.pop-overlay').show().animate({opacity:0.7},450);
+	    	$('.changeContact').show();
+	    	$('.ct-cancel').show();
+	    	$(".ct-sureRec").hide();
+	    });
+	    //确认收货
+	      $('.btn-sureReceive').click(function(){
+	      	$('body').css('overflow','hidden');
+	    	$('.pop-overlay').show().animate({opacity:0.7},450);
+	    	$('.changeContact').show();
+	    	$('.ct-cancel').hide();
+	    	$(".ct-sureRec").show();
+	    });
+
+	    //关闭弹窗
+	    $('.change-cancel').click(function(){
+	    	$('.pop-overlay').animate({opacity:0},500,function(){
+	    		$('.pop-overlay').hide();
+	    	});
+	    	$('.changeContact').hide();
+	    	$('body').css('overflow','visible');
+	    });
+
+	    //按钮
+	    $('.btn-box').on('click','a',function(){
+	    	$(this).addClass('active');
+	    	$(this).siblings().removeClass('active');
+	    });
+
+	    //头部添加样式
+	    $(".sun-bale-tab1 ul").on('click','span',function(){
+	    	$(this).addClass('active');
+	    	$(this).parent().siblings().find('span').removeClass('active');
+
+	    });
+
+
+
+	})
+</script>

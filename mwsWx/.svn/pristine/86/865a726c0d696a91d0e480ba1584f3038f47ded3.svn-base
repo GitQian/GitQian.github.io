@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+  		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  		<meta content="yes" name="apple-mobile-web-app-capable" />
+  		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  		<meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="../css/stylewx.css">
+		<title>申请退款</title>
+	</head>
+	<body>
+	<div class="applyReturnWrap">
+		<ul class="serviceList">
+			<li >
+				<p class="sel-p">
+					<input type="checkbox" class="icon-choose selected"><em>服务券：124556974</em></p>
+			</li>
+			<li class="last-li clearfix">
+				<p class="sel-p">
+					<input type="checkbox" class="icon-choose"><em>服务券：124556974</em></p>
+			</li>
+		</ul>
+		<!--退款总额-->
+		<div class="bottomWrap reurnMonery clearfix">
+			<span class="re-title">退款总额：</span><input type="text" class="ui-input">
+		</div>
+		<!--退款原因-->
+		<div  class="bottomWrap returnReason clearfix">
+			<span class="re-title">退款原因：</span><textarea name="" id="" cols="30" rows="5" class="ui-input"></textarea>
+		</div>
+		<!--提交申请-->
+		<div class="btn-box">
+			<a href="javascript:;" class="btn-center active">提交申请</a>
+		</div>
+	</div>
+	</body>
+</html>

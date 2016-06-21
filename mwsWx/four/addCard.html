@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>添加银行卡</title>
+  <meta name="keywords" content="" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta content="telephone=no" name="format-detection" />
+  <link rel="stylesheet" href="../css/stylewx.css"></head>
+<body>
+  <div class="pcPage addCardEdit">
+    <!--选择银行卡-->
+    <div class="chooseCard" >
+       <div class="bgTop bgLine"></div>
+      <div class="sdPay">
+        <h2>支付金额</h2>
+        <p class="payNum">￥<em>3012.00</em></p>
+      </div>
+      <div class="bgBottom bgLine"></div>
+      <div class="pc-edit-info chooseCardType" >
+        <dl>
+          <dt>卡号</dt>
+          <dd>
+            <input type="text" class="addCardInput" placeholder="请输入银行卡号码"></dd>
+        </dl>
+      </div>
+    </div>
+
+
+<div class="addCard" style="display: none">
+    <p class="payNum">
+      支付金额: ￥ <em>3012.00</em>
+    </p>
+    <!--添加信息-->
+    <div class="pc-edit-info addCardInfo" >
+      <dl class="">
+        <dt>银行卡</dt>
+        <dd>
+          <span>招商银行信用卡</span>
+        </dd>
+      </dl>
+      <dl class="">
+        <dt>卡号</dt>
+        <dd>
+          <span>51236888889945354444</span>
+        </dd>
+      </dl>
+
+    </div>
+    <div class="pc-edit-info addCardInfo">
+      <dl class="edit-info-required">
+        <dt>有效期</dt>
+        <dd>
+          <input type="text" class="addCardInput" placeholder="卡正面有效期，月份/年份"></dd>
+      </dl>
+      <dl class="edit-info-required">
+        <dt>安全码</dt>
+        <dd>
+          <input type="text" class="addCardInput" placeholder="卡背面最后3位数"></dd>
+      </dl>
+    </div>
+    <div class="pc-edit-info addCardInfo">
+      <dl>
+        <dt>姓名</dt>
+        <dd>
+          <input type="text" class="addCardInput" placeholder="持卡人姓名"></dd>
+      </dl>
+      <dl>
+        <dt>身份证</dt>
+        <dd>
+          <input type="text" class="addCardInput" placeholder="持卡人身份证号"></dd>
+      </dl>
+      <dl class="edit-info-required">
+        <dt>手机号</dt>
+        <dd>
+          <input type="tel" class="addCardInput" placeholder="银行预留手机号"></dd>
+      </dl>
+    </div>
+</div>
+    <!--下一步-->
+    <div class="btn-box addCardNext" >
+      <a href="javascript:;" class="btn-center btn-next">下一步</a>
+    </div>
+  </div>
+</body>
+</html>
+
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>

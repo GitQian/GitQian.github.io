@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+  		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  		<meta content="yes" name="apple-mobile-web-app-capable" />
+  		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  		<meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="../css/stylewx.css">
+		<title>订单确定</title>
+	</head>
+	<body>
+	<div class="orderSure-box">
+		<div class="sun-bale-order pcPage ordersure-wrap">
+			<div class="sun-bale-name">
+				<p>店铺：深圳鹏达汽车厂</p>
+			</div>
+			<div class="sun-bale-order1">
+				<ul>
+					<li>
+						<a href="#" class="clearfix">
+							<div class="sun-order-img">
+								<img src="../images/search_03.png"></div>
+							<div class="sun-order-pro">
+								<p>宝德琥珀汽车美容72元洗车优惠券宝德琥珀汽车美容72元洗车优惠券宝德琥珀汽车美容72元洗车优惠券宝德琥珀汽车美容72元洗车优惠券宝德琥珀汽车美容72元洗车优惠券</p>
+								<span>4G版</span>
+								<span>套餐2</span>
+							</div>
+							<div class="sun-order-price">
+								<span>￥72.00</span>
+								<span class="sun-span1">x1</span>
+							</div>
+						</a>
+						<div class="per-order-addinfo pc-edit-info">
+							<dl>
+								<dt>服务</dt>
+								<dd>安装费￥1000.00</dd>
+							</dl>
+							<dl>
+								<dt>门店</dt>
+								<dd>美赛达xxx安装点</dd>
+							</dl>
+							<dl>
+								<dt>电话号码</dt>
+								<dd>157589546255</dd>
+							</dl>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="clearfix">
+							<div class="sun-order-img">
+								<img src="../images/search_03.png"></div>
+							<div class="sun-order-pro">
+								<p>宝德琥珀汽车美容72元洗车优惠券</p>
+								<span>4G版</span>
+								<span>套餐2</span>
+							</div>
+							<div class="sun-order-price">
+								<span>￥72.00</span>
+								<span class="sun-span1">x1</span>
+							</div>
+						</a>
+						<div class="per-order-addinfo pc-edit-info">
+							<dl>
+								<dt>运费</dt>
+								<dd>￥1000.00</dd>
+							</dl>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="add-info addinfo-wrap">
+			<a href="javascript:;">
+				<dl class="add-proof">
+					<dt>发票信息</dt>
+					<dd class="add-cls">
+						<p>不开发票</p> <i class="icon-updown active"></i>
+					</dd>
+				</dl>
+			</a>
+			<div class="add-proof-type">
+				<a href="javascript:;">
+					<dl>
+						<dt>
+							<span class="sel-p"> <i class="icon-choose selected"></i>
+							</span>
+						</dt>
+						<dd>不开发票</dd>
+					</dl>
+				</a>
+				<a href="javascript:;">
+					<dl>
+						<dt>
+							<span class="sel-p">
+								<i class="icon-choose"></i>
+							</span>
+						</dt>
+						<dd>
+							<input type="text" placeholder="开具发票，请输入发票抬头" class="ui-input"></dd>
+					</dl>
+				</a>
+			</div>
+		</div>
+		<div class="order-otherInfo">
+			<span>备注:</span>
+			<textarea  rows="2" placeholder="给卖家留言（选填）" class="ui-textarea"></textarea>
+			<i class="icon_scan"><img src="../images/icon_scan.png"></i>
+		</div>
+		<div class="sun-all">
+			<p>共2件商品，合计： <em>￥176.23</em></p>
+			<p>总计: <em>￥176.23</em></p>
+		</div>
+		<div class="pay-box btn-box">
+		    <a href="javascript:;" class="btn-wx active btn-center">微信支付</a>
+			<!-- <a href="javascript:;" class="btn-credit btn-center" >信用卡支付</a> -->
+			<p>车联宝提供技术支持</p>
+		</div>
+	</div>
+	</body>
+</html>
+
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script>
+  window.onload=function(){
+
+  
+  //选择到店还是到家
+  $(".btn-box a").click(function(){
+  	var _this=$(this),
+  	    _parent=$(this).parent();
+  	_this.addClass("active");
+  	_this.siblings('a').removeClass('active');
+  	if(_parent.hasClass('cls-type')){
+  	    _this.hasClass('btn-home')?$(".create-address").show():$(".create-address").hide();
+     }  
+  });
+
+  //是否开具发票
+  $(".add-proof").click(function(){
+  	var _icon=$(this).find('.icon-updown'),
+  	   typeBox=$(this).parent().siblings('.add-proof-type');
+  	if(_icon.hasClass('active')){
+  		typeBox.hide();
+  		_icon.removeClass('active');
+  	}else{
+  		typeBox.show();
+  		_icon.addClass('active');
+  	}
+  });
+  //开具发票类型选择
+  $(".add-proof-type").on('click','dl',function(){
+  	var _iconChoose=$(this).find(".sel-p .icon-choose"),
+  	    _text=$.trim($(this).find('dd').text());//
+  	_iconChoose.addClass('selected').end().closest('dl').parent().siblings().find('.icon-choose').removeClass('selected');
+  	_text==''?_text="开具发票":_text=_text;
+  	$(".add-cls").find('p').text(_text);
+  })
+
+
+  }
+</script>

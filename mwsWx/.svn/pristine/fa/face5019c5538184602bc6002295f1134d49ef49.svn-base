@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>编辑收货地址</title>
+  <meta name="keywords" content="" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta content="telephone=no" name="format-detection" />
+  <link rel="stylesheet" href="../css/stylewx.css">
+
+</head>
+<body>
+  <div class="wxPage pcPage addressEdit">
+    <div class="pagebox">
+      <div class="pc-edit-info">
+        <!--首次下单选择送货方式-->
+        <dl  class="firstChoose-dl">
+            <dt>送货方式</dt>
+            <dd class="clearfix">
+              <div class="firstAddress">
+                <a href="javascript:;" class="active btn-store">到店</a>
+                <a href="javascript:;" class="btn-home">到家</a>
+              </div>
+            </dd>
+        </dl>
+        <!--编辑地址部分-->
+        <div class="addressEditWrap">
+          <dl class="">
+            <dt>收货人</dt>
+            <dd>
+              <input type="text" placeholder="请输入收货人的姓名" value="梨花"></dd>
+          </dl>
+          <dl >
+            <dt>电话</dt>
+            <dd>
+              <input type="text" placeholder="请输入手机或者固话"></dd>
+          </dl>
+          <dl class="add-proof">
+            <dt>门店</dt>
+            <dd class="add-cls">
+              <div class="chs-address" style="display:none">
+                <h2 class="address-name">美赛达科技园安装点</h2>
+                <p class="address-details">广东省深圳市南山区西丽街道北环科苑紫光信息港科研楼1102室</p>
+                <p>0755-29563265</p>
+              </div>
+              <span class="up-tips">请选择门店</span> <i class="icon-updown"></i>
+            </dd>
+          </dl>
+          <!--选择门店列表-->        
+          <div class="installList" style="display:none">
+            <div class="install-box">
+              <p class="choose-icon">
+                <img src="../images/icon_08.png" alt=""></p>
+              <div class="">
+                <div class="clearfix">
+                  <p class="address-name">美赛达科技园安装点</p>
+                  <a href="javascript:;" class="icon-box">
+                    <img src="../images/sunicon_03.png" alt=""></a>
+                </div>
+                <span class="address-details">广东省深圳市南山区西丽街道北环科苑紫光信息港科研楼1102室</span>
+                <span>0755-29563265</span>
+              </div>
+            </div>
+            <div class="install-box">
+              <p class="choose-icon" style="display: none">
+                <img src="../images/icon_08.png" alt=""></p>
+              <div class="">
+                <div class="clearfix">
+                  <p class="address-name">美赛达科技园安装点</p>
+                  <a href="javascript:;" class="icon-box">
+                    <img src="../images/sunicon_03.png" alt=""></a>
+                </div>
+                <span class="address-details">广东省深圳市南山区西丽街道北环科苑紫光信息港科研楼1102室</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--选择到家且已有地址-->
+         <a class="storeLinkWrap storeBox"  href="chooseInstall.html" style="display:none">
+           <p class="storeLinkTitle"><span>门店：深圳鹏达汽修厂  </span><span>0755-66111111</span></p>
+           <span class="stornLinkInfo">美赛达安装点（深圳市南山区清华信息港2号）</span>
+         </a>
+        <!--如果还未输过地址-->
+       <div class="homeBox" style="display:none">
+         <dl class="">
+           <dt>所在地区</dt>
+           <dd>
+             <a href="javascript:;" class="edit-cls icon-lead">
+               <span class="text-gray">请选择城市及地区</span>
+             </a>
+           </dd>
+         </dl>
+         <dl>
+           <dt>详细地址</dt>
+           <dd class="detail-address">
+             <textarea placeholder="请输入小区、门牌"></textarea>
+           </dd>
+         </dl>
+         <dl class="dl-last set-default">
+           <dt>设成默认地址</dt>
+         </dl>
+       </div>
+      </div>
+    </div>
+    <div class="page-btn">
+      <!--新增收货地址按钮-->
+      <p class="add-btn" >
+       <!--此次文字为|下一步|或者为保持并使用-->
+        <a href="javascript:;" class="btn-add">下一步</a>
+      </p>
+       <!--编辑收货地址按钮-->
+      <p class="clearfix edit-btn" style="display:none">
+        <a href="javascript:;" class="btn-save">保存并使用</a>
+        <a href="javascript:;" class="btn-del">删除地址</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script>
+  window.onload=function(){
+    //选择是到店还是到家
+    $('.firstAddress').on('click','a',function(){
+      $(this).addClass('active').siblings().removeClass('active');
+      if($(this).hasClass('btn-store')){//如果到店
+        $('.storeBox').show();
+        $('.homeBox').hide();
+        $('.add-proof').show();
+      }else{//如果到家，此处分两种情况，如果未输过地址
+         $('.storeBox').hide();
+        $('.homeBox').show();
+        $('.add-proof').hide();
+        //如果已经有地址
+
+      }
+    });
+
+  //打开选择门店列表
+  $(".add-proof").click(function(){
+    var _icon=$(this).find('.icon-updown'),
+       installList=$(this).siblings('.installList');
+    if(_icon.hasClass('active')){
+      installList.hide();
+      _icon.removeClass('active');
+    }else{
+      installList.show();
+      _icon.addClass('active');
+    }
+  });
+    //选择门店
+    $('.install-box').on('click',function(){
+      var onff=$(this).find('.choose-icon').css('display'),
+           _addName=$(this).find('.address-name').text(),
+           _addDetails=$(this).find('.address-details').text();
+      if(onff=="none"){
+        $(this).find('.choose-icon').show();
+        $(this).siblings(".install-box").find('.choose-icon').hide();
+        $(".chs-address").show();
+        $('.up-tips').hide();
+        $(".installList").hide();
+        $('.icon-updown').removeClass('active');
+        $(".chs-address").find('.address-name').text(_addName);
+        $(".chs-address").find('.address-details').text(_addDetails   );
+      }else{
+        $(this).find('.choose-icon').hide();
+         $(".chs-address").hide();
+        $('.up-tips').show();
+      }
+    });
+
+
+  }
+</script>

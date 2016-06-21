@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+  		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  		<meta content="yes" name="apple-mobile-web-app-capable" />
+  		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  		<meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="../css/stylewx.css">
+        <link rel="stylesheet" type="text/css" href="../css/next.css" />
+        <script type="text/javascript" src="../js/jquery-1.7.1.min.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<div class="Sun-logistics">
+			<div class="Sun-logistics-state">
+				<p class="sun-state">物流状态 <span>已签收</span></p>
+				<p>物流公司：顺丰速运</p>
+				<p>物流单号：12365000001</p>
+			</div>
+			<div class="sun-logistics-liu">
+				<p>物流跟踪</p>
+				<!-- <ul id="J_listtext2" class="status-list">
+					<li><span class="date">2015-09-19  18:10</span><span class="text">已签收感谢使用顺丰，期待再次为你服务</span></li>
+					<li><span class="date">2015-09-19  18:10</span><span class="text">深圳南山A站派件员：张三  13501235642正在为您派件</span></li>
+					<li><span class="date">2015-09-19  18:10</span><span class="text">到深圳分拨中心 已发出</span></li>
+					<li><span class="date">2015-09-19  18:10</span><span class="text">已签收感谢使用顺丰，期待再次为你服务</span></li>
+					<li><span class="date">2015-09-19  18:10</span><span class="text">已签收感谢使用顺丰，期待再次为你服务</span></li>
+				</ul>
+			</div> -->
+
+			<!--退换货进度-->
+			<div class="returnStep">
+			   <dl class="returnRe latest">
+			   	<dt>已签收感谢使用顺丰，期待再次为你服务</dt>
+			   	<dd >215-09-19</dd>
+			   </dl>
+			   <!--退换货 回邮商品-->
+			   <dl class="returnRe">
+			   	<dt class="">南山A站派件员：<em>张三13025411365 </em>正在为您派件</dt>
+			   	<dd >215-09-19</dd>
+			   </dl>
+			   <dl class="returnRe">
+			   	<dt class="">到达深圳分拨中心</dt>
+			   	<dd >215-09-19 10:9</dd>
+			   </dl>
+			   <dl class="returnRe">
+			   	<dt class="">快件已到达深圳分拨中心</dt>
+			   	<dd >215-09-19</dd>
+			   </dl>
+			   <dl class="returnRe">
+			   	<dt class="">虎门分拨中心已发出</dt>
+			   	<dd >215-09-19</dd>
+			   </dl>
+			</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$("#J_listtext2 li:first-child").addClass("latest");
+			});
+		</script>
+	</body>
+</html>
+

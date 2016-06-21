@@ -1,0 +1,195 @@
+/*****搜索*****/
+.sun-search{
+	width: 100%;
+	margin-top: 10px;
+	box-sizing: border-box;
+}
+.sun-search ul li{
+	width: 94%;
+	border-bottom: 1px #e1e1e1 solid;
+	background: #fff;
+	float: left;
+	padding: 15px 3%;
+}
+.sun-search ul li .search-img{
+	float: left;
+
+}
+.sun-search ul li .search-img img{
+	width: 100%;
+	max-width:80px;
+	height: 80px;
+	vertical-align: middle;
+}
+.sun-search ul li .search-div{
+	float: left;
+	width: 55%;
+	margin-left: 15px;
+}
+.sun-search ul li .search-div p{
+	font-size:1.2rem;
+	line-height: 24px;
+	color: #222222;
+}
+.sun-search ul li .search-div div{
+	margin-top: -25px;
+}
+.sun-search ul li .search-div div span{
+	color: #ff5e3e;
+	font-size:1.125rem;
+}
+.sun-search ul li .search-div div i{
+	color: #999999;
+	font-size:1.125rem;
+	text-decoration:line-through;
+	padding-left: 10px;
+}
+.sun-nosearch{
+	width: 100%;
+	text-align: center;
+	margin-top: 40px;
+}
+.sun-nosearch p{
+	font-size:1.2rem;
+	color: #222222;
+	margin-top: 20px;
+}
+.sun-nosearch a{
+	background: #fbfafa;
+	border: 1px #cbcbcb solid;
+	text-align: center;
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+	font-size: 1.25rem;
+	color: #666666;
+	padding: 8px 0;
+	border-radius: 5px 5px;
+	margin-top: 20px;
+}
+
+#wrapper {
+	position: absolute;
+	z-index: 1;
+	top: 105px;
+	bottom: 88px;
+/* 	left: 9999px; */
+	/* Not a must - can be 0 - but it makes the appearance of the content a bit nicer */
+	width: 100%;
+/* 	background: #ccc; */
+	overflow: hidden;
+}
+
+#scroller {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	width: 96%;
+	margin: 0 2% 0 2%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+#scroller ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	text-align: left;
+}
+
+#scroller li {
+	height: 80px;
+	line-height: 80px;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #fff;
+	background-color: #fafafa;
+	font-size: 14px;
+}
+
+.pullDownLabel, .pullUpLabel {
+	color: #999
+}
+
+.pullDown, .pullUp {
+	background: #fff;
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	font-size: 0.8em;
+	color: #888
+}
+
+.pullDown .pullDownIcon, .pullUp .pullUpIcon {
+	display: block;
+	float: left;
+	opacity: 0.4;
+	width: 40px;
+	height: 40px;
+	background: url(../images/message/pull_to_refresh.png) 0 0 no-repeat;
+	-webkit-background-size: 40px 80px;
+	-ms-background-size: 40px 80px;
+	background-size: 40px 80px;
+	-webkit-transition-property: -webkit-transform;
+	-ms-transition-property: -webkit-transform;
+	-webkit-transition-duration: 250ms;
+	-ms-transition-duration: 250ms
+}
+
+.pullDown .pullDownIcon {
+	-webkit-transform: rotate(0deg) translateZ(0);
+	-ms-transform: rotate(0deg) translateZ(0)
+}
+
+.pullUp .pullUpIcon {
+	-webkit-transform: rotate(-180deg) translateZ(0);
+	-ms-transform: rotate(-180deg) translateZ(0)
+}
+
+.pullDown.flip .pullDownIcon {
+	-webkit-transform: rotate(-180deg) translateZ(0);
+	-ms-transform: rotate(-180deg) translateZ(0)
+}
+
+.pullUp.flip .pullUpIcon {
+	-webkit-transform: rotate(0deg) translateZ(0);
+	-ms-transform: rotate(0deg) translateZ(0)
+}
+
+.pullDown.loading .pullDownIcon, .pullUp.loading .pullUpIcon {
+	background-position: 0 100%;
+	-webkit-transform: rotate(0deg) translateZ(0);
+	-ms-transform: rotate(0deg) translateZ(0);
+	-webkit-transition-duration: 0ms;
+	-ms-transition-duration: 0ms;
+	-webkit-animation-name: loading;
+	-ms-animation-name: loading;
+	-webkit-animation-duration: 1s;
+	-ms-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-ms-animation-timing-function: linear
+}
+
+@-webkit-keyframes loading {
+	from {-webkit-transform:rotate(0deg) translateZ(0)}
+	to {-webkit-transform:rotate(360deg) translateZ(0)}
+}
+@-ms-keyframes loading {
+	from {-ms-transform:rotate(0deg) translateZ(0)}
+	to {-ms-transform:rotate(360deg) translateZ(0)}
+}

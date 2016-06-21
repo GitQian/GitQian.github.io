@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+  		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  		<meta content="yes" name="apple-mobile-web-app-capable" />
+  		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  		<meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="css/stylewx.css?032">
+		<title>订单支付</title>
+	</head>
+	<body>
+		<div class="orderpay">
+		    <div class="pay-tips">
+		        <!--支付失败-->
+		    	<a href="javascript:;" class="clearfix pay-f" style="display:none">
+		    		<img src="images/icon_07.png" alt="">		    
+		    		<span>支付未完成</span>
+		    	</a>
+		    	<!--支付成功-->
+		    	<a href="javascript:;" class="clearfix pay-s" >
+		    		<img src="images/icon_08.png" alt="">		    
+		    		<span>支付成功</span>
+		    	</a>
+		    </div>
+			<div class="order-paydetails">
+				<p><em>2</em>件商品，来自<em>深圳鹏达汽修厂</em></p>
+				<p>合计：<em class="all-money">￥3205.10</em></p>
+				<p ><a href="javascript:;" class="order-lnk">查看订单详情></a></p>
+			</div>
+		</div>
+		<!--支付成功后选择安装点-->
+		<div class="install-box" >
+		   <div class="clearfix">
+		   	    <p>为您预设免费安装点，您可以修改</p>
+		   	    <a href="javascript:;" class="icon-box"><img src="images/icon_zt.png" alt=""></a>
+		   </div>
+		   <div>
+		   	    <div class="clearfix">
+		   	    	<p>美赛达科技园安装点</p>
+		   	    	<a href="javascript:;" class="icon-box"><img src="images/sunicon_03.png" alt=""></a>
+		   	    </div>
+		   	    <span>广东省深圳市南山区西丽街道北环科苑紫光信息港科研楼1102室</span>
+		   </div>
+		</div>
+		<!--支付失败后再支付-->
+		<div class="pay-box btn-box" >
+		    <a href="javascript:;" class="btn-wx  btn-center active">微信支付</a>
+			<a href="javascript:;" class="btn-credit btn-center" >信用卡支付</a>
+		</div>
+		<div class="btn-box"><a href="javascript:;" class="lnk-order btn-center">查看我的订单</a></div>
+	</body>
+</html>
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script>
+  window.onload=function(){
+  
+  //操作按钮颜色的改变
+  $(".pay-box a").click(function(){
+  	var _this=$(this),
+  	    _parent=$(this).parent();
+  	_this.addClass("active");
+  	_this.siblings('a').removeClass('active');
+  	if(_parent.hasClass('cls-type')){
+  	    _this.hasClass('btn-home')?$(".create-address").show():$(".create-address").hide();
+     }  
+  });
+  }
+</script>

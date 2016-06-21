@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+  		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  		<meta content="yes" name="apple-mobile-web-app-capable" />
+  		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  		<meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="../css/stylewx.css">
+		<title></title>
+	</head>
+	<body>
+	<div class="rescueSearch pcPage">
+		<div class="seacherHeader clearfix ">
+			<div class="sun-seacher clearfix">
+				<a href="javascript:;" class="icon-seach">
+					<img src="../images/index_33.png" width="20px" height="20px"></a>
+				<input name="Input" class="input-search" type="text" placeholder="请输入地点"/>	
+				<a href="javascript:;" class="icon-delet" style="display: none"><img src="../images/index_09.gif"></a>
+			</div>
+			<a href="javascript:;" class="btn-search">搜索</a>
+		</div>
+		<div class="rescueList pc-edit-info">
+			<dl class="rescue-dl">
+				<dt class="roadAddTitle"><img src="../images/sunicon_03.png" alt=""></dt>
+				<dd class="roadAddBox">
+				<h2>天虹商场（富民店）</h2>
+				<p>深圳市南山区科技园北区北环大道200号</p></dd>
+			</dl>
+			<dl class="rescue-dl">
+				<dt class="roadAddTitle"><img src="../images/sunicon_03.png" alt=""></dt>
+				<dd class="roadAddBox">
+				<h2>天虹商场（富民店）</h2>
+				<p>深圳市南山区科技园北区北环大道200号</p></dd>
+			</dl>
+		</div>
+	</div>
+	</body>
+</html>
+<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+<script>
+
+window.onload=function(){
+  //选择类型
+ $(".input-search").focus(function(){
+ 	$(this).siblings('.icon-seach').hide();
+ 	$('.icon-delet').show();
+ });
+
+  $(".input-search").blur(function(){
+  	if($(this).val()==''){
+  		$(this).siblings('.icon-seach').show();
+  		$('.icon-delet').hide();
+  	}
+ });
+  $('.icon-delet').click(function(){
+  	$(this).siblings('input').val('');
+  	$(this).hide();
+  	$('.icon-seach').show();
+  })
+  
+
+
+
+}
+</script>

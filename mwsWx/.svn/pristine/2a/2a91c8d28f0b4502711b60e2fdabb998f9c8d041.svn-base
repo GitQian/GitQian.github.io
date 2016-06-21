@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<link rel="stylesheet" href="../css/mui.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/stylewx.css">
+	<script src="../js/jquery-1.7.1.min.js"></script>
+	<title>更多产品</title>
+</head>
+<body>
+
+
+	<div class="Sun-page indexWrap  moreProductWrap">
+		<div class="sun-page-top clearfix">
+			<p class="fl">
+				<img src="../images/index_03.png" width="40px" height="40px">
+				<a href="#">深圳鹏达汽修厂</a>
+			</p>
+			<span class="fr">
+				<a href="javascript:;" class="lnk-attention">&nbsp;&nbsp;&nbsp;&nbsp;关注</a>
+			</span>
+		</div>
+		<div  class="sun-product" data-slider="8">
+		    <!--筛选分类-->
+			<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<div class="mui-scroll">
+					<a class="mui-control-item mui-active" href="#item1mobile">
+						推荐
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						热点
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						北京
+					</a>
+					<a class="mui-control-item" href="#item4mobile">
+						社会
+					</a>
+					<a class="mui-control-item" href="#item5mobile">
+						娱乐
+					</a>
+					<a class="mui-control-item" href="#item6mobile">
+						科技
+					</a>
+				</div>
+			</div>
+            <!--商品列表-->
+			<div class="sun-content">
+				<div class="sun-content-one">
+					<ul class="clearfix">
+						<li>
+							<a>
+								<img src="../images/product_03.gif"></a>
+							<p>方向盘皮套</p>
+							<div class="clearfix">
+								<p>
+									<span>￥38.00</span> <i>￥88.00</i>
+								</p>
+								<a class="sun-shoping">
+									<img src="../images/index_41.png"></a>
+							</div>
+
+						</li>
+						<li>
+							<a>
+								<img src="../images/product_03.gif"></a>
+							<p>方向盘皮套</p>
+							<p>
+								<span>￥38.00</span> <i>￥88.00</i>
+							</p>
+							<a class="sun-shoping">
+								<img src="../images/index_41.png"></a>
+						</li>
+						<li>
+							<a>
+								<img src="../images/product_03.gif"></a>
+							<p>方向盘皮套</p>
+							<p>
+								<span>￥38.00</span>
+								<i>￥88.00</i>
+							</p>
+							<a class="sun-shoping">
+								<img src="../images/index_41.png"></a>
+						</li>
+						<li>
+							<a>
+								<img src="../images/product_03.gif"></a>
+							<p>方向盘皮套</p>
+							<p>
+								<span>￥38.00</span>
+								<i>￥88.00</i>
+							</p>
+							<a class="sun-shoping">
+								<img src="../images/index_41.png"></a>
+						</li>
+						<li>
+							<a>
+								<img src="../images/product_03.gif"></a>
+							<p>方向盘皮套</p>
+							<p>
+								<span>￥38.00</span>
+								<i>￥88.00</i>
+							</p>
+							<a class="sun-shoping">
+								<img src="../images/index_41.png"></a>
+						</li>
+						<li>
+							<a>
+								<img src="../images/product_03.gif"></a>
+							<p>方向盘皮套</p>
+							<p>
+								<span>￥38.00</span>
+								<i>￥88.00</i>
+							</p>
+							<a class="sun-shoping">
+								<img src="../images/index_41.png"></a>
+						</li>
+					</ul>
+					<p class="sun-more">
+						<a href="#">更多</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="sun-last">
+			<div class="sun-last-cont">
+				<ul>
+					<li>
+						<a href="#">关于我们</a>
+					</li>
+					<li>
+						<a href="#">个人中心</a>
+					</li>
+					<li>
+						<a href="#">线下门店</a>
+					</li>
+				</ul>
+			</div>
+			<p>车联宝提供技术支持</p>
+			<div class="sun-shop">
+				<a href="#">
+					<img src="../images/shop_03.png" width="24x" style="padding-top: 10px;"></a>
+			</div>
+		</div>
+	</div>
+
+	  <!--选择规格弹窗-->
+<div class="pop-overlay" style="display:none"></div>
+<div class="popup" id="pop-chooseType" >  
+  <div class="pop-content">
+    <!--商品基本信息-->
+    <div class="imgWrap chooseTypeBox clearfix">
+      <div class="imgWrap-itemPic">
+        <img src="../images/pc_toux.png"></div>
+      <div class="imgWrap-itemInfo">
+        <p class="itemInfo-price">￥2100~12444.00</p>
+        <p class="itemInfo-spare">
+          库存: <em>100</em>
+        </p>
+        <p class="itemInfo-type" >
+          <span>4G版本</span>
+          <span>套餐2</span>
+        </p>
+      </div>
+      <a href="javascript:;" class="typeClose-btn">
+        <img src="../images/index_09.gif" alt=""></a>
+    </div>
+    <!--规格栏目-->
+    <div class="typeColumn">
+      <!--选择车型-->
+      <div class="firstTypeWrap chooseTypeBox">
+        <h2>选择车型</h2>
+        <div class="typeBox clearfix">
+            <!--选择车型下拉单-->
+          <ul class=" clearfix">
+            <li class="carSel-brand carSel-li">
+              <select>
+                <option>请选择汽车品牌</option>
+                <option>湖北省</option>
+                <option>湖南省</option>
+              </select>
+            </li>
+            <li class="carSel-series carSel-li">
+              <select>
+                <option>请选择车系</option>
+                <option>所有城市</option>
+                <option>深圳市</option>
+              </select>
+            </li>
+            <li class="carSel-year carSel-li">
+              <select>
+                <option>请选择年款</option>
+                <option>克孜勒苏柯尔克孜自治州</option>
+                <option>深圳市</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--规格分类1-->    
+      <div class="firstTypeWrap chooseTypeBox">
+        <h2>规格分类1</h2>
+        <div class="typeBox clearfix">
+          <a href="javascript:;">4G版</a>
+          <a href="javascript:;">WIFI版</a>
+        </div>
+      </div> 
+      <div class="secondTypeWrap chooseTypeBox">
+        <h2>规格分类2</h2>
+        <div class="typeBox clearfix">
+          <a href="javascript:;" class="selected">套餐1</a>
+          <a href="javascript:;">套餐2</a>
+          <a href="javascript:;">套餐3</a>
+          <a href="javascript:;">套餐4</a>
+        </div>
+      </div>
+      <!--安装类型-->   
+      <div class="installTypeWrap chooseTypeBox">
+        <h2>安装类型</h2>
+        <div class="typeBox clearfix">
+          <a href="javascript:;" class="selected">到店安装</a>
+          <a href="javascript:;">无需安装</a>
+        </div>
+      </div>
+      <!--服务类型-->   
+      <!-- <div class="serviceTypeWrap chooseTypeBox">
+        <h2>服务类型</h2>
+        <div class="typeBox clearfix">
+          <a href="javascript:;" class="selected">安装1</a>
+          <a href="javascript:;">安装2</a>
+        </div>
+      </div> -->
+      <!--安装门店-->   
+      <!-- <div class="installStoreWrap chooseTypeBox">
+        <h2>安装门店</h2>
+        <a href="javascript:;" class="serviceLink">美赛达安装点（深圳市南山区清华信息港2号）</a>
+      </div> -->
+      <!--商品数量的增减-->    
+      <div class="numTypeWrap chooseTypeBox">
+        <h2>数量</h2>
+        <div class="num-box">
+          <a href="javascript:;" class="choose-reduce noOperate per-btn">-</a>
+          <a href="javascript:;" class="choose-num per-btn">1</a>
+          <a href="javascript:;" class="choose-add per-btn">+</a>
+        </div>
+      </div>
+
+    </div>
+    
+    <!--加入购物车或者购买-->
+    <div class="btn-box chooseTypeBtn moreBtnBox clearfix" >
+      <a href="javascript:;" class="chooseBtn active">加入购物车</a>
+      <a href="javascript:;" class="chooseBtn" >立即购买</a>
+    </div>
+    <!--确认订单-->
+    <div class="btn-box chooseTypeSure" style="display: none">
+      <a href="javascript:;" class="btn-center active">确定</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="../js/mui.min.js"></script>
+</body>
+</html>
+<script>
+	mui.init();
+	(function($) {
+
+		//阻尼系数
+		var deceleration = mui.os.ios?0.003:0.0009;
+		$('.mui-scroll-wrapper').scroll({
+			bounce: false,
+			indicators: true, //是否显示滚动条
+			deceleration:deceleration
+		});
+		$.ready(function() {
+			
+		});
+	})(mui);
+</script>
+
+
+<script type="text/javascript">
+	 $(document).ready( function(){
+		//初始化滚动位置
+		$(".clsList").css('webkitTransform','translateX(0px)');
+
+		$(".sun-li li").click( function(){
+			$(this).addClass("crunte").siblings().removeClass("crunte");
+			$(".sun-content div").hide().eq($('.sun-li li').index(this)).show();
+		});
+		//产品数量增加
+	    $("#pop-chooseType").on('click','.choose-add',function(event){
+	     var baseNum=$(this).siblings('.choose-num').text();
+	     baseNum++;
+	     $(this).siblings('.choose-num').text(baseNum).end().siblings('.choose-reduce').removeClass('noOperate');
+	    });
+
+		//产品数量减少
+	    $("#pop-chooseType").on('click','.choose-reduce',function(event){
+	     var baseNum=$(this).siblings('.choose-num').text();
+	     if(baseNum>1){
+	     	baseNum--;
+	        $(this).siblings('.choose-num').text(baseNum);
+	        baseNum==1?$(this).addClass("noOperate"):'';
+	      }else{
+	      	$(this).addClass("noOperate");
+	      }
+	    });
+
+	   //初始化弹窗位置
+		var h=$(window).height();
+       $('.popup').css('top',h);
+       //购买弹窗
+		$('.sun-content-one').on('click','.sun-shoping',function(){
+			$('.pop-overlay').show().animate({opacity:0.7},450);
+	    	$('.popup').animate({top:0},500);
+	    	$(".chooseTypeBtn").show();
+	    	$(".chooseTypeSure").hide();
+		});
+
+		//选择规格
+	    $('.typeBox').on('click','a',function(){
+	    	$(this).addClass('selected').siblings().removeClass('selected');
+	    });
+
+		//关闭弹窗
+	    $('.typeClose-btn').click(function(){
+	    	$('.pop-overlay').animate({opacity:0},500,function(){
+	    		$('.pop-overlay').hide();
+	    	});
+	    	$('.popup').animate({top:h},500);
+	    });
+
+	 
+	});
+</script>
+

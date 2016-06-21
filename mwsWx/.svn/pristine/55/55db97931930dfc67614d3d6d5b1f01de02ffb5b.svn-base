@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="" />
+  		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  		<meta content="yes" name="apple-mobile-web-app-capable" />
+  		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  		<meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="../css/stylewx.css">
+        <link rel="stylesheet" type="text/css" href="../css/next.css">
+		<title>查看物流</title>
+	</head>
+	<body>
+		<div accesskey="sun-bale" class="orderLogisticWrap">
+			<!--订单物流列表-->		
+			<div class="logisticList">
+				<div class="sun-bale-order">
+					<div class="sun-bale-order1">
+						<ul>
+							<li>
+								<a href="#" class="clearfix">
+									<div class="sun-order-img">
+										<img src="../images/search_03.png"></div>
+									<div class="sun-order-pro">
+										<p>宝德琥珀汽车美容72元洗车优惠券</p>
+										<span>4G版</span>
+										<span>套餐2</span>
+									</div>
+									<div class="sun-order-price">
+										<span>￥72.00</span>
+										<span class="sun-span1">x1</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<div class="sun-order-img">
+										<img src="../images/search_03.png"></div>
+									<div class="sun-order-pro">
+										<p>宝德琥珀汽车美容72元洗车优惠券</p>
+										<span>4G版</span>
+										<span>套餐2</span>
+									</div>
+									<div class="sun-order-price">
+										<span>￥72.00</span>
+										<span class="sun-span1">x1</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<p class="log-tips">无需物流</p>
+				</div>
+				<div class="sun-bale-order">
+					<div class="sun-bale-order1">
+						<ul>
+							<li>
+								<a href="#" class="clearfix">
+									<div class="sun-order-img">
+										<img src="../images/search_03.png"></div>
+									<div class="sun-order-pro">
+										<p>宝德琥珀汽车美容72元洗车优惠券</p>
+										<span>4G版</span>
+										<span>套餐2</span>
+									</div>
+									<div class="sun-order-price">
+										<span>￥72.00</span>
+										<span class="sun-span1">x1</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="clearfix">
+									<div class="sun-order-img">
+										<img src="../images/search_03.png"></div>
+									<div class="sun-order-pro">
+										<p>宝德琥珀汽车美容72元洗车优惠券</p>
+										<span>4G版</span>
+										<span>套餐2</span>
+									</div>
+									<div class="sun-order-price">
+										<span>￥72.00</span>
+										<span class="sun-span1">x1</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<a href="logistics.html" class="log-tips">物流送货：<em>已签收</em></a>
+				
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
+
+<script src="../js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready( function(){
+
+	})
+</script>
