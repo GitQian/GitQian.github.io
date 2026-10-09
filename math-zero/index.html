@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>一年级数学：0的认识和加减法</title>
+<title>一年级数学：0的认识和加减法 - 学习</title>
 <style>
   * { box-sizing: border-box; }
   body {
@@ -17,12 +17,13 @@
   header h1 { margin: 0; font-size: 2em; color: #e67e22; }
   header p { margin: 6px 0 0; color: #555; }
   nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 12px; }
-  nav button {
+  nav button, nav a {
     border: none; border-radius: 20px; padding: 8px 16px;
-    background: #fff; color: #2980b9; font-size: 1em; cursor: pointer;
+    background: #fff; color: #2980b9; font-size: 1em; cursor: pointer; text-decoration: none;
     box-shadow: 0 2px 6px rgba(0,0,0,.1);
   }
   nav button.active { background: #2980b9; color: #fff; }
+  nav a.test-link { background: #e67e22; color: #fff; }
   main { max-width: 860px; margin: 0 auto; padding: 0 16px 40px; }
   section { display: none; background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
   section.active { display: block; }
@@ -53,7 +54,6 @@
   .feedback { min-height: 28px; text-align: center; font-size: 1.2em; margin-top: 10px; font-weight: bold; }
   .ok { color: #27ae60; }
   .bad { color: #e74c3c; }
-  .score { text-align: center; font-size: 1.1em; color: #555; }
   canvas {
     display: block; margin: 10px auto; background: #fff;
     border: 2px dashed #bbb; border-radius: 10px; touch-action: none; max-width: 100%;
@@ -72,12 +72,6 @@
   .num-line div:hover { background: #d6eaf8; }
   ul.steps { padding-left: 20px; }
   ul.steps li { margin: 6px 0; }
-  .stats { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 12px 0; }
-  .stat-box { background: #f8fbff; border: 2px solid #d6eaf8; border-radius: 12px; padding: 12px 20px; text-align: center; min-width: 150px; }
-  .stat-box .num { font-size: 2em; font-weight: bold; color: #2980b9; }
-  .stars { font-size: 2.2em; text-align: center; margin: 10px 0; }
-  .wrong-list { list-style: none; padding: 0; }
-  .wrong-list li { background: #fdedec; border-radius: 8px; padding: 8px 12px; margin: 6px 0; }
   footer { text-align: center; color: #888; font-size: .9em; padding: 16px; }
 </style>
 </head>
@@ -85,7 +79,7 @@
 
 <header>
   <h1>🌟 0的认识和加减法 🌟</h1>
-  <p>一年级数学 · 第30页 · 互动学习</p>
+  <p>一年级数学 · 第30页 · 学习内容（不计分）</p>
 </header>
 
 <nav>
@@ -93,8 +87,7 @@
   <button class="tab" data-target="s2">② 写0</button>
   <button class="tab" data-target="s3">③ 三条规律</button>
   <button class="tab" data-target="s4">④ 减0 vs 同数相减</button>
-  <button class="tab" data-target="s5">⑤ 0的加减法练习</button>
-  <button class="tab" data-target="s6">⑥ 学习结果</button>
+  <a class="test-link" href="test.html">📝 去做计分练习</a>
 </nav>
 
 <main>
@@ -179,12 +172,12 @@
     <div class="tip">💡 记忆口诀：<b>加 0 不变，减 0 不变，同数相减得 0。</b></div>
   </section>
 
-  <!-- 第4部分：区分减0和同数相减 -->
+  <!-- 第4部分：区分减0和同数相减（学习活动，不计分）-->
   <section id="s4">
     <h2>四、区分 5 - 0 和 5 - 5 <button class="speak" onclick="speak('区分五减零和五减五。看图说图意，再选出对应的算式。')">🔊</button></h2>
     <p>看图说图意，再选出对应的算式。</p>
 
-    <div class="card" data-qid="q4-1">
+    <div class="card">
       <h3>图一：盘子里有 5 个饺子，一个也没吃
         <button class="speak" onclick="speak('盘子里有五个饺子，一个也没吃。请选出对应的算式。')">🔊</button>
       </h3>
@@ -196,7 +189,7 @@
       <div class="feedback"></div>
     </div>
 
-    <div class="card" data-qid="q4-2">
+    <div class="card">
       <h3>图二：盘子里有 5 个饺子，全部都吃掉了
         <button class="speak" onclick="speak('盘子里有五个饺子，全部都吃掉了。请选出对应的算式。')">🔊</button>
       </h3>
@@ -214,32 +207,6 @@
 
     <div class="card">
       <p>在家可以用小物品（如纽扣、豆子）摆一摆，直观感受区别。</p>
-    </div>
-  </section>
-
-  <!-- 第5部分：练习 -->
-  <section id="s5">
-    <h2>五、0的加减法练习</h2>
-    <div class="card">
-      <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
-        <div class="eq" id="qText"></div>
-        <button class="speak" onclick="speakCurrentQuestion()">🔊</button>
-      </div>
-      <div class="options" id="qOptions"></div>
-      <div class="feedback" id="qFeedback"></div>
-    </div>
-    <div class="score" id="qScore"></div>
-    <div class="options">
-      <button class="btn" id="nextBtn" onclick="nextQuestion()">下一题</button>
-    </div>
-  </section>
-
-  <!-- 第6部分：结果统计 -->
-  <section id="s6">
-    <h2>六、学习结果 <button class="speak" onclick="speakResult()">🔊</button></h2>
-    <div id="resultBody"></div>
-    <div class="options">
-      <button class="btn secondary" onclick="resetAll()">重新练习</button>
     </div>
   </section>
 
@@ -268,13 +235,8 @@
       document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
       btn.classList.add('active');
       document.getElementById(btn.dataset.target).classList.add('active');
-      if (btn.dataset.target === 's6') renderResults();
     });
   });
-
-  // ---------- 答题记录 ----------
-  // 每条记录：{ section: '4' | '5', question, answer, correct }
-  const logs = [];
 
   // ---------- 第1部分：苹果 ----------
   const appleBox = document.getElementById('apples');
@@ -314,8 +276,7 @@
     d.textContent = i;
     if (i === 0) d.className = 'zero';
     d.onclick = () => {
-      const msg = i === 0 ? '零是起点，一个也没有！' : `这是数字 ${i}，从零数到它要数 ${i} 下。`;
-      speak(msg);
+      speak(i === 0 ? '零是起点，一个也没有！' : `这是数字 ${i}，从零数到它要数 ${i} 下。`);
     };
     numLine.appendChild(d);
   }
@@ -344,192 +305,19 @@
   pad.addEventListener('touchend', end);
   function clearPad() { ctx.clearRect(0, 0, pad.width, pad.height); }
 
-  // ---------- 第4部分：判断（只判对错，不标出正确答案）----------
+  // ---------- 第4部分：学习活动（只给提示，不计分）----------
   function pickS4(btn, correct) {
     const card = btn.closest('.card');
-    if (card.dataset.done) return;
     const fb = card.querySelector('.feedback');
     if (correct) {
-      card.dataset.done = '1';
       card.querySelectorAll('.options button').forEach(b => b.disabled = true);
       fb.className = 'feedback ok';
-      fb.textContent = '✅ 正确！';
+      fb.textContent = '✅ 对啦！';
     } else {
       fb.className = 'feedback bad';
       fb.textContent = '❌ 再想想，看看有没有全部拿走？';
     }
-    // 每题只记录第一次作答
-    if (!card.dataset.recorded) {
-      card.dataset.recorded = '1';
-      logs.push({
-        section: '4',
-        question: card.querySelector('h3').textContent.trim(),
-        answer: btn.textContent.trim(),
-        correct: correct
-      });
-    }
   }
-
-  // ---------- 第5部分：随机练习（共 10 题）----------
-  const TOTAL_Q = 10;
-  const CN = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
-  let qCount = 0;           // 已出题数
-  let answer = null;
-  let current = null;       // {a, b, op, res, spoken}
-  let answeredThis = false;
-
-  const qText = document.getElementById('qText');
-  const qOptions = document.getElementById('qOptions');
-  const qFeedback = document.getElementById('qFeedback');
-  const qScore = document.getElementById('qScore');
-  const nextBtn = document.getElementById('nextBtn');
-
-  function rand(n) { return Math.floor(Math.random() * (n + 1)); }
-
-  function newQuestion() {
-    const type = rand(2);
-    let a, b, op, res;
-    if (type === 0) {            // 加0
-      a = rand(9); b = 0; op = '+'; res = a;
-    } else if (type === 1) {     // 减0
-      a = rand(9); b = 0; op = '-'; res = a;
-    } else {                     // 同数相减
-      a = rand(9); b = a; op = '-'; res = 0;
-    }
-    current = { a, b, op, res };
-    answer = res;
-    answeredThis = false;
-    qCount++;
-    qText.textContent = `${a} ${op} ${b} = ?`;
-    qFeedback.textContent = '';
-    qOptions.innerHTML = '';
-
-    const opts = new Set([res]);
-    while (opts.size < 4) opts.add(rand(9));
-    [...opts].sort(() => Math.random() - 0.5).forEach(v => {
-      const btn = document.createElement('button');
-      btn.textContent = v;
-      btn.onclick = () => answerQ(btn, v);
-      qOptions.appendChild(btn);
-    });
-    nextBtn.disabled = true;
-    nextBtn.textContent = '下一题';
-    updateScoreText();
-  }
-
-  function speakCurrentQuestion() {
-    if (!current) return;
-    const opName = current.op === '+' ? '加' : '减';
-    speak(`${CN[current.a]}${opName}${CN[current.b]}等于多少？`);
-  }
-
-  function answerQ(btn, v) {
-    if (answeredThis) return;
-    answeredThis = true;
-    qOptions.querySelectorAll('button').forEach(b => b.disabled = true);
-    const correct = v === answer;
-    if (correct) {
-      qFeedback.className = 'feedback ok';
-      qFeedback.textContent = '✅ 太棒了！';
-    } else {
-      qFeedback.className = 'feedback bad';
-      qFeedback.textContent = `❌ 正确答案是 ${answer}`;
-    }
-    logs.push({
-      section: '5',
-      question: `${current.a} ${current.op} ${current.b} = ?`,
-      answer: v,
-      correct: correct
-    });
-    nextBtn.disabled = false;
-    if (qCount >= TOTAL_Q) nextBtn.textContent = '查看结果';
-    updateScoreText();
-  }
-
-  function nextQuestion() {
-    if (qCount >= TOTAL_Q) {
-      document.querySelector('.tab[data-target="s6"]').click();
-    } else {
-      newQuestion();
-    }
-  }
-
-  function updateScoreText() {
-    const s5 = logs.filter(l => l.section === '5');
-    const right = s5.filter(l => l.correct).length;
-    qScore.textContent = `第 ${Math.min(qCount, TOTAL_Q)} / ${TOTAL_Q} 题 ｜ 答对 ${right} 题`;
-  }
-
-  // ---------- 第6部分：结果统计 ----------
-  function renderResults() {
-    const s4 = logs.filter(l => l.section === '4');
-    const s5 = logs.filter(l => l.section === '5');
-    const s4Right = s4.filter(l => l.correct).length;
-    const s5Right = s5.filter(l => l.correct).length;
-    const s4Total = document.querySelectorAll('#s4 .card[data-qid]').length;
-    const done = s4.length + s5.length;
-    const allTotal = s4Total + TOTAL_Q;
-    const allRight = s4Right + s5Right;
-    const pct = allTotal ? Math.round(allRight / allTotal * 100) : 0;
-
-    let stars = 1;
-    if (pct >= 90) stars = 3;
-    else if (pct >= 60) stars = 2;
-    const starStr = '⭐'.repeat(stars) + '☆'.repeat(3 - stars);
-
-    let comment;
-    if (pct >= 90) comment = '太棒了，0 的加减法你已经掌握啦！';
-    else if (pct >= 60) comment = '做得不错，再复习一下容易混淆的题目吧。';
-    else comment = '别灰心，再看看前面的讲解，多练几次就会了。';
-
-    const wrongs = logs.filter(l => !l.correct);
-    const wrongHtml = wrongs.length
-      ? `<h3>需要再想想的题目</h3><ul class="wrong-list">` +
-        wrongs.map(l => `<li>${l.section === '4' ? '看图选算式' : '计算题'}：${l.question}　你的答案：${l.answer}</li>`).join('') +
-        `</ul>`
-      : (done ? '<p class="ok" style="text-align:center">全部答对，没有错题！</p>' : '');
-
-    const resultText = `你完成了 ${done} 题，答对 ${allRight} 题，正确率 ${pct}%。${comment}`;
-    window.lastResultText = resultText;
-
-    document.getElementById('resultBody').innerHTML = `
-      <div class="stats">
-        <div class="stat-box"><div>看图选算式</div><div class="num">${s4Right} / ${s4Total}</div><div>答对</div></div>
-        <div class="stat-box"><div>0的加减法</div><div class="num">${s5Right} / ${TOTAL_Q}</div><div>答对</div></div>
-        <div class="stat-box"><div>总正确率</div><div class="num">${pct}%</div><div>${allRight} / ${allTotal} 题</div></div>
-      </div>
-      <div class="stars">${starStr}</div>
-      <div class="tip">${comment}</div>
-      <p class="score">${done === 0 ? '还没有作答记录，请先完成第④、⑤部分的练习。' : ''}</p>
-      ${wrongHtml}
-      <div class="options">
-        <button class="speak" style="width:auto;border-radius:10px;padding:8px 16px;font-size:1em;" onclick="speakResult()">🔊 听听结果</button>
-      </div>
-    `;
-  }
-
-  function speakResult() {
-    if (!window.lastResultText) renderResults();
-    speak(window.lastResultText);
-  }
-
-  function resetAll() {
-    logs.length = 0;
-    document.querySelectorAll('#s4 .card[data-qid]').forEach(card => {
-      delete card.dataset.done;
-      delete card.dataset.recorded;
-      card.querySelectorAll('.options button').forEach(b => b.disabled = false);
-      card.querySelector('.feedback').textContent = '';
-      card.querySelector('.feedback').className = 'feedback';
-    });
-    qCount = 0;
-    newQuestion();
-    renderResults();
-  }
-
-  // 初始化第5部分
-  newQuestion();
-  renderResults();
 </script>
 </body>
 </html>

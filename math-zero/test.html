@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一年级数学：0的加减法 - 计分练习</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    background: linear-gradient(135deg, #fff7e0, #e0f7ff);
+    color: #333; line-height: 1.6;
+  }
+  header { text-align: center; padding: 24px 12px 8px; }
+  header h1 { margin: 0; font-size: 2em; color: #e67e22; }
+  header p { margin: 6px 0 0; color: #555; }
+  nav { display: flex; justify-content: center; gap: 8px; padding: 12px; }
+  nav a {
+    border-radius: 20px; padding: 8px 16px; background: #fff; color: #2980b9;
+    text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  }
+  main { max-width: 860px; margin: 0 auto; padding: 0 16px 40px; }
+  .panel { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+  h2 { color: #27ae60; margin-top: 0; }
+  .card { background: #f8fbff; border: 2px solid #d6eaf8; border-radius: 12px; padding: 14px; margin: 12px 0; }
+  .eq { font-size: 2.2em; text-align: center; font-weight: bold; margin: 8px 0; }
+  .options { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 12px; }
+  .options button, .btn {
+    border: none; border-radius: 10px; padding: 12px 22px; font-size: 1.2em;
+    background: #f39c12; color: #fff; cursor: pointer;
+  }
+  .options button:disabled { background: #bdc3c7; cursor: default; }
+  .options button:hover:not(:disabled), .btn:hover { filter: brightness(1.08); }
+  .btn.secondary { background: #95a5a6; }
+  .speak {
+    border: none; border-radius: 50%; width: 42px; height: 42px; font-size: 1.3em;
+    background: #3498db; color: #fff; cursor: pointer; flex-shrink: 0;
+  }
+  .feedback { min-height: 28px; text-align: center; font-size: 1.2em; margin-top: 10px; font-weight: bold; }
+  .ok { color: #27ae60; }
+  .bad { color: #e74c3c; }
+  .progress { text-align: center; color: #555; font-size: 1.1em; }
+  .stats { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 12px 0; }
+  .stat-box { background: #f8fbff; border: 2px solid #d6eaf8; border-radius: 12px; padding: 12px 20px; text-align: center; min-width: 160px; }
+  .stat-box .num { font-size: 2em; font-weight: bold; color: #2980b9; }
+  .stars { font-size: 2.2em; text-align: center; margin: 10px 0; }
+  .tip { background: #fef9e7; border-left: 5px solid #f1c40f; padding: 8px 12px; border-radius: 6px; margin: 10px 0; }
+  .wrong-list { list-style: none; padding: 0; }
+  .wrong-list li { background: #fdedec; border-radius: 8px; padding: 8px 12px; margin: 6px 0; }
+  .hidden { display: none; }
+  footer { text-align: center; color: #888; font-size: .9em; padding: 16px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📝 0的加减法 计分练习 📝</h1>
+  <p>一年级数学 · 第30页 · 共 10 题，完成后显示结果</p>
+</header>
+
+<nav>
+  <a href="index.html">← 返回学习内容</a>
+</nav>
+
+<main>
+  <div class="panel" id="quizPanel">
+    <div class="progress" id="progress"></div>
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
+        <div class="eq" id="qText"></div>
+        <button class="speak" onclick="speakQuestion()">🔊</button>
+      </div>
+      <div class="options" id="qOptions"></div>
+      <div class="feedback" id="qFeedback"></div>
+    </div>
+    <div class="options">
+      <button class="btn" id="nextBtn" disabled onclick="next()">下一题</button>
+    </div>
+  </div>
+
+  <div class="panel hidden" id="resultPanel">
+    <h2>练习结果</h2>
+    <div class="stats">
+      <div class="stat-box"><div>答对</div><div class="num" id="rRight"></div><div>题</div></div>
+      <div class="stat-box"><div>总题数</div><div class="num" id="rTotal"></div><div>题</div></div>
+      <div class="stat-box"><div>正确率</div><div class="num" id="rPct"></div></div>
+    </div>
+    <div class="stars" id="rStars"></div>
+    <div class="tip" id="rComment"></div>
+    <div id="rWrong"></div>
+    <div class="options">
+      <button class="btn" onclick="speakResult()">🔊 听听结果</button>
+      <button class="btn secondary" onclick="restart()">再练一次</button>
+      <a class="btn secondary" href="index.html" style="text-decoration:none;">返回学习</a>
+    </div>
+  </div>
+</main>
+
+<footer>© 一年级数学 · 0的认识和加减法</footer>
+
+<script>
+  const TOTAL_Q = 10;
+  const CN = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+
+  function speak(text) {
+    if (!('speechSynthesis' in window)) { alert('当前浏览器不支持语音朗读'); return; }
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN';
+    u.rate = 0.85;
+    speechSynthesis.speak(u);
+  }
+
+  let logs = [];
+  let qIndex = 0;
+  let current = null;
+  let answered = false;
+
+  const qText = document.getElementById('qText');
+  const qOptions = document.getElementById('qOptions');
+  const qFeedback = document.getElementById('qFeedback');
+  const progress = document.getElementById('progress');
+  const nextBtn = document.getElementById('nextBtn');
+
+  function rand(n) { return Math.floor(Math.random() * (n + 1)); }
+
+  function makeQuestion() {
+    const type = rand(2);
+    if (type === 0) {               // 加0
+      const a = rand(9);
+      return { a, b: 0, op: '+', res: a };
+    }
+    if (type === 1) {               // 减0
+      const a = rand(9);
+      return { a, b: 0, op: '-', res: a };
+    }
+    const a = rand(9);              // 同数相减
+    return { a, b: a, op: '-', res: 0 };
+  }
+
+  function showQuestion() {
+    current = makeQuestion();
+    answered = false;
+    qIndex++;
+    qText.textContent = `${current.a} ${current.op} ${current.b} = ?`;
+    qFeedback.textContent = '';
+    qOptions.innerHTML = '';
+    progress.textContent = `第 ${qIndex} / ${TOTAL_Q} 题`;
+
+    const opts = new Set([current.res]);
+    while (opts.size < 4) opts.add(rand(9));
+    [...opts].sort(() => Math.random() - 0.5).forEach(v => {
+      const btn = document.createElement('button');
+      btn.textContent = v;
+      btn.onclick = () => answer(v);
+      qOptions.appendChild(btn);
+    });
+    nextBtn.disabled = true;
+    nextBtn.textContent = qIndex >= TOTAL_Q ? '查看结果' : '下一题';
+  }
+
+  function speakQuestion() {
+    if (!current) return;
+    const opName = current.op === '+' ? '加' : '减';
+    speak(`${CN[current.a]}${opName}${CN[current.b]}等于多少？`);
+  }
+
+  function answer(v) {
+    if (answered) return;
+    answered = true;
+    qOptions.querySelectorAll('button').forEach(b => b.disabled = true);
+    const correct = v === current.res;
+    qFeedback.className = 'feedback ' + (correct ? 'ok' : 'bad');
+    qFeedback.textContent = correct ? '✅ 太棒了！' : `❌ 正确答案是 ${current.res}`;
+    logs.push({
+      question: `${current.a} ${current.op} ${current.b} = ?`,
+      answer: v,
+      correct
+    });
+    nextBtn.disabled = false;
+  }
+
+  function next() {
+    if (qIndex >= TOTAL_Q) {
+      showResult();
+    } else {
+      showQuestion();
+    }
+  }
+
+  let resultText = '';
+  function showResult() {
+    document.getElementById('quizPanel').classList.add('hidden');
+    document.getElementById('resultPanel').classList.remove('hidden');
+
+    const right = logs.filter(l => l.correct).length;
+    const pct = Math.round(right / TOTAL_Q * 100);
+    let stars = 1, comment = '别灰心，再回去看看学习内容，多练几次就会了。';
+    if (pct >= 90) { stars = 3; comment = '太棒了，0 的加减法你已经掌握啦！'; }
+    else if (pct >= 60) { stars = 2; comment = '做得不错，再复习一下容易混淆的减 0 和同数相减。'; }
+
+    document.getElementById('rRight').textContent = right;
+    document.getElementById('rTotal').textContent = TOTAL_Q;
+    document.getElementById('rPct').textContent = pct + '%';
+    document.getElementById('rStars').textContent = '⭐'.repeat(stars) + '☆'.repeat(3 - stars);
+    document.getElementById('rComment').textContent = comment;
+
+    const wrongs = logs.filter(l => !l.correct);
+    document.getElementById('rWrong').innerHTML = wrongs.length
+      ? '<h3>需要再想想的题目</h3><ul class="wrong-list">' +
+        wrongs.map(l => `<li>${l.question}　你的答案：${l.answer}</li>`).join('') + '</ul>'
+      : '<p class="ok" style="text-align:center">全部答对，没有错题！</p>';
+
+    resultText = `你完成了 ${TOTAL_Q} 题，答对 ${right} 题，正确率 ${pct}%。${comment}`;
+  }
+
+  function speakResult() { speak(resultText); }
+
+  function restart() {
+    logs = [];
+    qIndex = 0;
+    document.getElementById('resultPanel').classList.add('hidden');
+    document.getElementById('quizPanel').classList.remove('hidden');
+    showQuestion();
+  }
+
+  showQuestion();
+</script>
+</body>
+</html>
