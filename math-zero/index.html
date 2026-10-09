@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一年级数学：0的认识和加减法</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    background: linear-gradient(135deg, #fff7e0, #e0f7ff);
+    color: #333;
+    line-height: 1.6;
+  }
+  header {
+    text-align: center;
+    padding: 24px 12px 8px;
+  }
+  header h1 { margin: 0; font-size: 2em; color: #e67e22; }
+  header p { margin: 6px 0 0; color: #555; }
+  nav {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+    padding: 12px;
+  }
+  nav button {
+    border: none; border-radius: 20px; padding: 8px 16px;
+    background: #fff; color: #2980b9; font-size: 1em; cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  }
+  nav button.active { background: #2980b9; color: #fff; }
+  main { max-width: 860px; margin: 0 auto; padding: 0 16px 40px; }
+  section { display: none; background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+  section.active { display: block; }
+  h2 { color: #27ae60; margin-top: 0; }
+  .card {
+    background: #f8fbff; border: 2px solid #d6eaf8; border-radius: 12px;
+    padding: 14px; margin: 12px 0;
+  }
+  .big { font-size: 2.4em; font-weight: bold; text-align: center; color: #e74c3c; }
+  .eq { font-size: 1.8em; text-align: center; font-weight: bold; margin: 8px 0; }
+  .items { display: flex; flex-wrap: wrap; gap: 8px; min-height: 60px; justify-content: center; align-items: center; }
+  .item { font-size: 2em; cursor: pointer; user-select: none; transition: transform .15s; }
+  .item:hover { transform: scale(1.2); }
+  .item.gone { opacity: .15; }
+  .tip { background: #fef9e7; border-left: 5px solid #f1c40f; padding: 8px 12px; border-radius: 6px; margin: 10px 0; }
+  .warn { background: #fdedec; border-left: 5px solid #e74c3c; padding: 8px 12px; border-radius: 6px; margin: 10px 0; }
+  .options { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 12px; }
+  .options button, .btn {
+    border: none; border-radius: 10px; padding: 10px 18px; font-size: 1.1em;
+    background: #f39c12; color: #fff; cursor: pointer;
+  }
+  .options button:hover, .btn:hover { filter: brightness(1.08); }
+  .btn.secondary { background: #95a5a6; }
+  .feedback { min-height: 28px; text-align: center; font-size: 1.2em; margin-top: 10px; font-weight: bold; }
+  .ok { color: #27ae60; }
+  .bad { color: #e74c3c; }
+  .score { text-align: center; font-size: 1.1em; color: #555; }
+  canvas {
+    display: block; margin: 10px auto; background: #fff;
+    border: 2px dashed #bbb; border-radius: 10px; touch-action: none; max-width: 100%;
+  }
+  .zero-ghost {
+    font-size: 8em; text-align: center; color: #ddd; line-height: 1; margin: 0; font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+  }
+  .num-line { display: flex; justify-content: center; align-items: flex-end; gap: 4px; flex-wrap: wrap; margin-top: 10px; }
+  .num-line div {
+    width: 52px; height: 52px; border-radius: 50%; border: 2px solid #3498db;
+    display: flex; align-items: center; justify-content: center; font-size: 1.3em; cursor: pointer; background: #fff;
+  }
+  .num-line div.zero { background: #f1c40f; border-color: #e67e22; font-weight: bold; }
+  .num-line div:hover { background: #d6eaf8; }
+  ul.steps { padding-left: 20px; }
+  ul.steps li { margin: 6px 0; }
+  footer { text-align: center; color: #888; font-size: .9em; padding: 16px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🌟 0的认识和加减法 🌟</h1>
+  <p>一年级数学 · 第30页 · 互动学习</p>
+</header>
+
+<nav>
+  <button class="tab active" data-target="s1">① 认识0</button>
+  <button class="tab" data-target="s2">② 写0</button>
+  <button class="tab" data-target="s3">③ 三条规律</button>
+  <button class="tab" data-target="s4">④ 减0 vs 同数相减</button>
+  <button class="tab" data-target="s5">⑤ 0的加减法练习</button>
+</nav>
+
+<main>
+
+  <!-- 第1部分：认识0 -->
+  <section id="s1" class="active">
+    <h2>一、认识数字0</h2>
+    <p>0 有两个意思：<b>①表示一个也没有</b>；<b>②表示起点</b>。</p>
+
+    <div class="card">
+      <h3>🍎 意思一：表示一个也没有</h3>
+      <p>篮子里有 3 个苹果，点击苹果把它们拿走，看看最后还剩几个？</p>
+      <div class="items" id="apples"></div>
+      <div class="eq" id="appleCount"></div>
+      <div class="options">
+        <button onclick="resetApples()">重新摆放</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🏁 意思二：表示起点</h3>
+      <p>点击数字，从 0 开始数一数：</p>
+      <div class="num-line" id="numLine"></div>
+      <div class="tip">0 是最小的数，也是数数的起点。</div>
+    </div>
+  </section>
+
+  <!-- 第2部分：写0 -->
+  <section id="s2">
+    <h2>二、规范书写0</h2>
+    <p>0 要写得<b>圆润饱满</b>，线条连起来，<b>不能有缺口</b>。</p>
+    <div class="card">
+      <p class="score">下面的虚线 0 是参考字，请在画板上照着描一描：</p>
+      <div class="zero-ghost">0</div>
+      <canvas id="pad" width="400" height="300"></canvas>
+      <div class="options">
+        <button class="btn secondary" onclick="clearPad()">清除重写</button>
+      </div>
+    </div>
+    <div class="tip">
+      <b>书写小贴士：</b>
+      <ul class="steps">
+        <li>从上方中间偏左一点的位置开始，逆时针画一个椭圆。</li>
+        <li>线条要连贯，最后与起笔处自然相接，不留缺口。</li>
+        <li>0 的大小要比 1、2 略大，形状饱满圆润。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 第3部分：三条规律 -->
+  <section id="s3">
+    <h2>三、0的三条计算规律</h2>
+
+    <div class="card">
+      <h3>规律①：相同两数相减，得 0</h3>
+      <div class="eq">4 - 4 = 0</div>
+      <p>4 个苹果，吃掉 4 个，一个也没有了。</p>
+    </div>
+
+    <div class="card">
+      <h3>规律②：一个数加 0，还等于原来的数</h3>
+      <div class="eq">3 + 0 = 3</div>
+      <p>原来有 3 块糖，又拿来 0 块，还是 3 块。</p>
+    </div>
+
+    <div class="card">
+      <h3>规律③：一个数减 0，还等于原来的数</h3>
+      <div class="eq">5 - 0 = 5</div>
+      <p>原来有 5 支铅笔，拿走 0 支，还是 5 支。</p>
+    </div>
+
+    <div class="tip">💡 记忆口诀：<b>加 0 不变，减 0 不变，同数相减得 0。</b></div>
+  </section>
+
+  <!-- 第4部分：区分减0和同数相减 -->
+  <section id="s4">
+    <h2>四、区分 5 - 0 和 5 - 5</h2>
+    <p>看图说图意，再选出对应的算式。</p>
+
+    <div class="card">
+      <h3>图一：盘子里有 5 个饺子，一个也没吃</h3>
+      <div class="items">🥟🥟🥟🥟🥟</div>
+      <div class="options">
+        <button onclick="checkAns(this,true)">5 - 0 = 5 ✔</button>
+        <button onclick="checkAns(this,false)">5 - 5 = 0</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>图二：盘子里有 5 个饺子，全部都吃掉了</h3>
+      <div class="items">🥟🥟🥟🥟🥟</div>
+      <div class="options">
+        <button onclick="checkAns(this,false)">5 - 0 = 5</button>
+        <button onclick="checkAns(this,true)">5 - 5 = 0 ✔</button>
+      </div>
+    </div>
+
+    <div class="warn">
+      ⚠️ <b>关键：</b>减 0 是「什么都没拿走」，结果还是原数；同数相减是「全部拿走」，结果为 0。
+    </div>
+
+    <div class="card">
+      <p>在家可以用小物品（如纽扣、豆子）摆一摆，直观感受区别。</p>
+    </div>
+  </section>
+
+  <!-- 第5部分：练习 -->
+  <section id="s5">
+    <h2>五、0的加减法练习</h2>
+    <div class="card">
+      <div class="eq" id="qText"></div>
+      <div class="options" id="qOptions"></div>
+      <div class="feedback" id="qFeedback"></div>
+    </div>
+    <div class="score" id="qScore"></div>
+    <div class="options">
+      <button class="btn" onclick="newQuestion()">下一题</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 一年级数学 · 0的认识和加减法</footer>
+
+<script>
+  // ---------- 标签切换 ----------
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.target).classList.add('active');
+      if (btn.dataset.target === 's5' && !qText.textContent) newQuestion();
+    });
+  });
+
+  // ---------- 第1部分：苹果 ----------
+  const appleBox = document.getElementById('apples');
+  function resetApples() {
+    appleBox.innerHTML = '';
+    for (let i = 0; i < 3; i++) {
+      const span = document.createElement('span');
+      span.className = 'item';
+      span.textContent = '🍎';
+      span.onclick = () => {
+        if (!span.classList.contains('gone')) {
+          span.classList.add('gone');
+          updateAppleCount();
+        }
+      };
+      appleBox.appendChild(span);
+    }
+    updateAppleCount();
+  }
+  function updateAppleCount() {
+    const total = appleBox.children.length;
+    const gone = appleBox.querySelectorAll('.gone').length;
+    const left = total - gone;
+    const el = document.getElementById('appleCount');
+    if (left === 0) {
+      el.innerHTML = '一个也没有了，剩下 <span class="bad">0</span> 个';
+    } else {
+      el.textContent = `还剩 ${left} 个`;
+    }
+  }
+  resetApples();
+
+  // ---------- 第1部分：数轴 ----------
+  const numLine = document.getElementById('numLine');
+  for (let i = 0; i <= 9; i++) {
+    const d = document.createElement('div');
+    d.textContent = i;
+    if (i === 0) d.className = 'zero';
+    d.onclick = () => {
+      alert(i === 0 ? '0 是起点，一个也没有！' : `这是数字 ${i}，从 0 数到它要数 ${i} 下。`);
+    };
+    numLine.appendChild(d);
+  }
+
+  // ---------- 第2部分：书写画板 ----------
+  const pad = document.getElementById('pad');
+  const ctx = pad.getContext('2d');
+  ctx.lineWidth = 8;
+  ctx.lineCap = 'round';
+  ctx.strokeStyle = '#2c3e50';
+  let drawing = false;
+  function pos(e) {
+    const r = pad.getBoundingClientRect();
+    const p = e.touches ? e.touches[0] : e;
+    return [(p.clientX - r.left) * pad.width / r.width, (p.clientY - r.top) * pad.height / r.height];
+  }
+  function start(e) { drawing = true; const [x, y] = pos(e); ctx.beginPath(); ctx.moveTo(x, y); e.preventDefault(); }
+  function move(e) { if (!drawing) return; const [x, y] = pos(e); ctx.lineTo(x, y); ctx.stroke(); e.preventDefault(); }
+  function end() { drawing = false; }
+  pad.addEventListener('mousedown', start);
+  pad.addEventListener('mousemove', move);
+  pad.addEventListener('mouseup', end);
+  pad.addEventListener('mouseleave', end);
+  pad.addEventListener('touchstart', start, { passive: false });
+  pad.addEventListener('touchmove', move, { passive: false });
+  pad.addEventListener('touchend', end);
+  function clearPad() { ctx.clearRect(0, 0, pad.width, pad.height); }
+
+  // ---------- 第4部分：判断 ----------
+  function checkAns(btn, correct) {
+    const fb = btn.parentElement.parentElement.querySelector('.options');
+    const existing = btn.parentElement.parentElement.querySelector('.fb-msg');
+    if (existing) existing.remove();
+    const msg = document.createElement('div');
+    msg.className = 'feedback fb-msg ' + (correct ? 'ok' : 'bad');
+    msg.textContent = correct ? '✅ 正确！' : '❌ 再想想，看看有没有全部拿走？';
+    btn.parentElement.parentElement.appendChild(msg);
+  }
+
+  // ---------- 第5部分：随机练习 ----------
+  let score = 0, total = 0, answer = null;
+  const qText = document.getElementById('qText');
+  const qOptions = document.getElementById('qOptions');
+  const qFeedback = document.getElementById('qFeedback');
+  const qScore = document.getElementById('qScore');
+
+  function rand(n) { return Math.floor(Math.random() * (n + 1)); }
+  function newQuestion() {
+    const type = rand(3);
+    let a, b, op, res;
+    if (type === 0) {            // 加0
+      a = rand(9); b = 0; op = '+'; res = a;
+    } else if (type === 1) {     // 减0
+      a = rand(9); b = 0; op = '-'; res = a;
+    } else {                     // 同数相减
+      a = rand(9); b = a; op = '-'; res = 0;
+    }
+    answer = res;
+    qText.textContent = `${a} ${op} ${b} = ?`;
+    qFeedback.textContent = '';
+    qOptions.innerHTML = '';
+    // 生成4个选项
+    const opts = new Set([res]);
+    while (opts.size < 4) opts.add(rand(9));
+    [...opts].sort(() => Math.random() - 0.5).forEach(v => {
+      const btn = document.createElement('button');
+      btn.textContent = v;
+      btn.onclick = () => answerQ(btn, v);
+      qOptions.appendChild(btn);
+    });
+    qScore.textContent = `得分：${score} / ${total}`;
+  }
+  function answerQ(btn, v) {
+    if (btn.disabled) return;
+    total++;
+    qOptions.querySelectorAll('button').forEach(b => b.disabled = true);
+    if (v === answer) {
+      score++;
+      qFeedback.className = 'feedback ok';
+      qFeedback.textContent = '✅ 太棒了！';
+    } else {
+      qFeedback.className = 'feedback bad';
+      qFeedback.textContent = `❌ 正确答案是 ${answer}`;
+    }
+    qScore.textContent = `得分：${score} / ${total}`;
+  }
+
+  // 初始显示
+  newQuestion();
+</script>
+</body>
+</html>
