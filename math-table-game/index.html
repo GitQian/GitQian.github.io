@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一年级数学：5以内加减法表 · 说一说 / 算一算</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    background: linear-gradient(135deg, #fff7e0, #e0f7ff);
+    color: #333; line-height: 1.6;
+  }
+  header { text-align: center; padding: 24px 12px 8px; }
+  header h1 { margin: 0; font-size: 2em; color: #e67e22; }
+  header p { margin: 6px 0 0; color: #555; }
+  nav { display: flex; justify-content: center; gap: 8px; padding: 12px; flex-wrap: wrap; }
+  nav button {
+    border: none; border-radius: 20px; padding: 8px 18px; background: #fff; color: #2980b9;
+    font-size: 1.05em; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  }
+  nav button.active { background: #2980b9; color: #fff; }
+  main { max-width: 900px; margin: 0 auto; padding: 0 16px 40px; }
+  section { display: none; background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+  section.active { display: block; }
+  h2 { color: #27ae60; margin: 0 0 8px; display: flex; align-items: center; gap: 10px; }
+  .card { background: #f8fbff; border: 2px solid #d6eaf8; border-radius: 12px; padding: 14px; margin: 12px 0; }
+  .speak {
+    border: none; border-radius: 50%; width: 42px; height: 42px; font-size: 1.3em;
+    background: #3498db; color: #fff; cursor: pointer; flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  }
+  .speak:hover { filter: brightness(1.1); }
+  .btn {
+    border: none; border-radius: 10px; padding: 10px 18px; font-size: 1.1em;
+    background: #f39c12; color: #fff; cursor: pointer;
+  }
+  .btn:disabled { background: #bdc3c7; cursor: default; }
+  .btn.secondary { background: #95a5a6; }
+  .btn.dir { background: #8e44ad; }
+  .btn.dir.on { background: #27ae60; }
+  .row-flex { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: flex-start; }
+  .tables { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+  .table-box { text-align: center; }
+  .table-box h3 { margin: 4px 0; color: #2c3e50; }
+  table.tbl { border-collapse: collapse; }
+  table.tbl th, table.tbl td {
+    width: 46px; height: 46px; text-align: center; font-size: 1.3em; border: 1px solid #ccc;
+  }
+  table.tbl th { background: #eaf2f8; color: #2c3e50; font-size: 1.1em; }
+  table.tbl td.empty { background: #fafafa; }
+  table.tbl td.hl { background: #f9e79f; font-weight: bold; color: #c0392b; }
+  table.tbl td.hl-dir { background: #d5f5e3; }
+  .rule-box { background: #fef9e7; border-left: 5px solid #f1c40f; border-radius: 8px; padding: 10px 14px; margin-top: 12px; }
+  .rule-box .seq { font-size: 1.4em; font-weight: bold; color: #c0392b; margin-top: 4px; }
+  .hint { color: #777; font-size: .95em; text-align: center; margin-top: 6px; }
+  /* 算一算 */
+  .q-area { text-align: center; }
+  .q-text { font-size: 3em; font-weight: bold; color: #2c3e50; margin: 10px 0; }
+  .timer { height: 12px; background: #eee; border-radius: 6px; overflow: hidden; margin: 10px auto; max-width: 420px; }
+  .timer > div { height: 100%; width: 100%; background: #27ae60; transition: width .1s linear; }
+  .choices { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 14px; }
+  .choices button {
+    width: 90px; height: 90px; border-radius: 50%; border: 3px solid #3498db; background: #fff;
+    font-size: 2.2em; cursor: pointer; font-weight: bold; color: #2c3e50;
+  }
+  .choices button:hover:not(:disabled) { background: #d6eaf8; }
+  .choices button.right { background: #2ecc71; border-color: #27ae60; color: #fff; }
+  .choices button.wrong { background: #e74c3c; border-color: #c0392b; color: #fff; }
+  .choices button:disabled { cursor: default; }
+  .msg { min-height: 34px; font-size: 1.5em; font-weight: bold; margin-top: 12px; }
+  .ok { color: #27ae60; } .bad { color: #e74c3c; }
+  .streak { font-size: 1.1em; color: #8e44ad; margin-top: 6px; }
+  .end-box { text-align: center; padding: 20px; }
+  .end-box .big { font-size: 2.6em; }
+  footer { text-align: center; color: #888; font-size: .9em; padding: 16px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🌟 5以内加减法表 🌟</h1>
+  <p>一年级数学 · 第一单元复习 · 说一说 / 算一算</p>
+</header>
+
+<nav>
+  <button class="tab active" data-target="s1">1️⃣ 说一说：加法表、减法表的规律</button>
+  <button class="tab" data-target="s2">2️⃣ 算一算：快问快答</button>
+</nav>
+
+<main>
+
+  <!-- 说一说 -->
+  <section id="s1" class="active">
+    <h2>加法表 & 减法表 <button class="speak" onclick="speak('这是五以内的加法表和减法表。点击下面的按钮，可以看横着看、竖着看、斜着看的规律。')">🔊</button></h2>
+    <p class="hint">点击下面的按钮，表格里对应的算式会变色，同时听一听规律。</p>
+
+    <div class="tables">
+      <div class="table-box">
+        <h3>加法表</h3>
+        <table class="tbl" id="addTbl"></table>
+      </div>
+      <div class="table-box">
+        <h3>减法表</h3>
+        <table class="tbl" id="subTbl"></table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>➕ 加法表的规律</h3>
+      <div class="row-flex">
+        <button class="btn dir" data-tbl="add" data-dir="v">竖着看</button>
+        <button class="btn dir" data-tbl="add" data-dir="h">横着看</button>
+        <button class="btn dir" data-tbl="add" data-dir="d">斜着看</button>
+      </div>
+      <div class="rule-box" id="addRule">
+        <div>请点击上面的按钮。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>➖ 减法表的规律</h3>
+      <div class="row-flex">
+        <button class="btn dir" data-tbl="sub" data-dir="v">竖着看</button>
+        <button class="btn dir" data-tbl="sub" data-dir="h">横着看</button>
+        <button class="btn dir" data-tbl="sub" data-dir="d">斜着看</button>
+      </div>
+      <div class="rule-box" id="subRule">
+        <div>请点击上面的按钮。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 算一算 -->
+  <section id="s2">
+    <h2>快问快答 <button class="speak" onclick="speak('快问快答。看到算式，快速选出得数，每题限时十秒。')">🔊</button></h2>
+    <p class="hint">每题限时 10 秒，看清算式后点击正确的得数。点击 🔊 可以听题目。</p>
+
+    <div class="card q-area" id="gameArea">
+      <div id="startBox">
+        <p>准备好了吗？共 10 题。</p>
+        <button class="btn" onclick="startGame()">开始</button>
+      </div>
+
+      <div id="playBox" style="display:none;">
+        <div class="streak" id="streakText"></div>
+        <div style="display:flex;align-items:center;justify-content:center;gap:12px;">
+          <div class="q-text" id="qText"></div>
+          <button class="speak" onclick="speakQ()">🔊</button>
+        </div>
+        <div class="timer"><div id="timerBar"></div></div>
+        <div class="choices" id="choices"></div>
+        <div class="msg" id="msg"></div>
+        <div style="margin-top:12px;"><button class="btn" id="nextBtn" disabled onclick="nextQ()">下一题</button></div>
+      </div>
+
+      <div id="endBox" class="end-box" style="display:none;">
+        <div class="big" id="endEmoji"></div>
+        <p id="endText"></p>
+        <button class="btn" onclick="startGame()">再玩一次</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 一年级数学 · 5以内加减法表</footer>
+
+<script>
+  // ---------- 语音 ----------
+  function speak(text) {
+    if (!('speechSynthesis' in window)) { alert('当前浏览器不支持语音朗读'); return; }
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN';
+    u.rate = 0.85;
+    speechSynthesis.speak(u);
+  }
+  const CN = ['零', '一', '二', '三', '四', '五'];
+  const OP_CN = { '+': '加', '-': '减' };
+
+  // ---------- 标签 ----------
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.target).classList.add('active');
+      if (btn.dataset.target !== 's2') stopTimer();
+    });
+  });
+
+  // ---------- 表格 ----------
+  // 行 = 第一个数（被加数 / 被减数），列 = 第二个数（加数 / 减数）
+  function buildTable(id, isAdd) {
+    const t = document.getElementById(id);
+    let html = '<tr><th>' + (isAdd ? '+' : '−') + '</th>';
+    for (let c = 0; c <= 5; c++) html += `<th>${c}</th>`;
+    html += '</tr>';
+    for (let r = 0; r <= 5; r++) {
+      html += `<tr><th>${r}</th>`;
+      for (let c = 0; c <= 5; c++) {
+        const valid = isAdd ? (r + c <= 5) : (c <= r);
+        const val = isAdd ? r + c : r - c;
+        html += valid
+          ? `<td id="${id}-${r}-${c}">${val}</td>`
+          : `<td class="empty"></td>`;
+      }
+      html += '</tr>';
+    }
+    t.innerHTML = html;
+  }
+  buildTable('addTbl', true);
+  buildTable('subTbl', false);
+
+  // ---------- 规律（以老师课堂上的规律为准，举例用表中实际算式）----------
+  const RULES = {
+    add: {
+      v: {
+        cells: [[0,2],[1,2],[2,2],[3,2]],
+        text: '竖着看：第二个加数不变，第一个加数依次多 1，结果依次多 1。',
+        seq: '0+2=2，1+2=3，2+2=4，3+2=5'
+      },
+      h: {
+        cells: [[3,0],[2,1],[1,2],[0,3]],
+        text: '横着看：第一个加数依次少 1，第二个加数依次多 1，结果不变。',
+        seq: '3+0=3，2+1=3，1+2=3，0+3=3'
+      },
+      d: {
+        cells: [[1,0],[1,1],[1,2],[1,3]],
+        text: '斜着看：第一个加数不变，第二个加数依次多 1，结果依次多 1。',
+        seq: '1+0=1，1+1=2，1+2=3，1+3=4'
+      }
+    },
+    sub: {
+      v: {
+        cells: [[1,1],[2,1],[3,1],[4,1]],
+        text: '竖着看：第一个数依次加 1，第二个数不变，得数依次加 1。',
+        seq: '1−1=0，2−1=1，3−1=2，4−1=3'
+      },
+      h: {
+        cells: [[5,0],[5,1],[5,2],[5,3]],
+        text: '横着看：第一个数不变，第二个数依次加 1，得数依次少 1。',
+        seq: '5−0=5，5−1=4，5−2=3，5−3=2'
+      },
+      d: {
+        cells: [[1,0],[2,1],[3,2],[4,3]],
+        text: '斜着看：第一个数依次加 1，第二个数也依次加 1，得数不变。',
+        seq: '1−0=1，2−1=1，3−2=1，4−3=1'
+      }
+    }
+  };
+  const DIR_NAME = { v: '竖着看', h: '横着看', d: '斜着看' };
+
+  let activeBtn = null;
+  document.querySelectorAll('.btn.dir').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tbl = btn.dataset.tbl, dir = btn.dataset.dir;
+      const isAdd = tbl === 'add';
+      const tableId = isAdd ? 'addTbl' : 'subTbl';
+      const ruleId = isAdd ? 'addRule' : 'subRule';
+      // 清除该表高亮
+      document.querySelectorAll(`#${tableId} td`).forEach(td => td.classList.remove('hl', 'hl-dir'));
+      // 同组按钮状态
+      document.querySelectorAll(`.btn.dir[data-tbl="${tbl}"]`).forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+
+      const rule = RULES[tbl][dir];
+      rule.cells.forEach(([r, c]) => {
+        const td = document.getElementById(`${tableId}-${r}-${c}`);
+        if (td) td.classList.add('hl');
+      });
+      const box = document.getElementById(ruleId);
+      box.innerHTML = `<div><b>${isAdd ? '加法表' : '减法表'} · ${DIR_NAME[dir]}</b></div>
+        <div>${rule.text}</div>
+        <div class="seq">${rule.seq}</div>
+        <div style="margin-top:6px"><button class="speak" onclick="speak('${rule.text}')">🔊</button></div>`;
+      speak(rule.text);
+    });
+  });
+
+  // ---------- 算一算：快问快答 ----------
+  const TOTAL = 10;
+  const LIMIT_MS = 10000;
+  let qNo = 0, streak = 0, correctCount = 0;
+  let cur = null, timerId = null, startTime = 0, answered = false;
+
+  function randInt(n) { return Math.floor(Math.random() * (n + 1)); }
+
+  function makeQ() {
+    let a, b, op, res;
+    if (Math.random() < 0.5) {               // 加法：结果不超过 5
+      a = randInt(5); b = randInt(5 - a); op = '+'; res = a + b;
+    } else {                                  // 减法：被减数不超过 5
+      a = randInt(5); b = randInt(a); op = '-'; res = a - b;
+    }
+    return { a, b, op, res };
+  }
+
+  function startGame() {
+    qNo = 0; streak = 0; correctCount = 0;
+    document.getElementById('startBox').style.display = 'none';
+    document.getElementById('endBox').style.display = 'none';
+    document.getElementById('playBox').style.display = 'block';
+    nextQ();
+  }
+
+  function nextQ() {
+    if (qNo >= TOTAL) return showEnd();
+    qNo++;
+    cur = makeQ();
+    answered = false;
+    document.getElementById('qText').textContent = `${cur.a} ${cur.op === '+' ? '+' : '−'} ${cur.b} = ?`;
+    document.getElementById('msg').textContent = '';
+    document.getElementById('msg').className = 'msg';
+    document.getElementById('nextBtn').disabled = true;
+    document.getElementById('nextBtn').textContent = qNo >= TOTAL ? '看结果' : '下一题';
+    document.getElementById('streakText').textContent =
+      `第 ${qNo} / ${TOTAL} 题` + (streak >= 2 ? `　🔥 连对 ${streak} 题` : '');
+
+    // 选项：正确答案 + 3 个不同干扰项（都在 0~5 之间）
+    const opts = new Set([cur.res]);
+    while (opts.size < 4) opts.add(randInt(5));
+    const box = document.getElementById('choices');
+    box.innerHTML = '';
+    [...opts].sort(() => Math.random() - 0.5).forEach(v => {
+      const b = document.createElement('button');
+      b.textContent = v;
+      b.onclick = () => choose(b, v);
+      box.appendChild(b);
+    });
+    speakQ();
+    startTimer();
+  }
+
+  function speakQ() {
+    if (!cur) return;
+    speak(`${CN[cur.a]}${OP_CN[cur.op]}${CN[cur.b]}等于几？`);
+  }
+
+  function startTimer() {
+    stopTimer();
+    startTime = Date.now();
+    const bar = document.getElementById('timerBar');
+    bar.style.transition = 'none';
+    bar.style.width = '100%';
+    requestAnimationFrame(() => {
+      bar.style.transition = `width ${LIMIT_MS}ms linear`;
+      bar.style.width = '0%';
+    });
+    timerId = setTimeout(timeUp, LIMIT_MS);
+  }
+
+  function stopTimer() {
+    if (timerId) clearTimeout(timerId);
+    timerId = null;
+    const bar = document.getElementById('timerBar');
+    if (bar) { bar.style.transition = 'none'; }
+  }
+
+  function revealAnswer() {
+    document.querySelectorAll('#choices button').forEach(b => {
+      b.disabled = true;
+      if (Number(b.textContent) === cur.res) b.classList.add('right');
+    });
+  }
+
+  function timeUp() {
+    if (answered) return;
+    answered = true;
+    streak = 0;
+    revealAnswer();
+    const msg = document.getElementById('msg');
+    msg.className = 'msg bad';
+    msg.textContent = `⏰ 时间到！答案是 ${cur.res}`;
+    speak(`时间到，答案是${CN[cur.res]}`);
+    document.getElementById('nextBtn').disabled = false;
+  }
+
+  function choose(btn, v) {
+    if (answered) return;
+    answered = true;
+    stopTimer();
+    document.querySelectorAll('#choices button').forEach(b => b.disabled = true);
+    const msg = document.getElementById('msg');
+    if (v === cur.res) {
+      correctCount++;
+      streak++;
+      btn.classList.add('right');
+      msg.className = 'msg ok';
+      msg.textContent = '✅ 真棒！';
+      speak('真棒！');
+    } else {
+      streak = 0;
+      btn.classList.add('wrong');
+      revealAnswer();
+      msg.className = 'msg bad';
+      msg.textContent = `❌ 再看看，答案是 ${cur.res}`;
+      speak(`再看看，答案是${CN[cur.res]}`);
+    }
+    document.getElementById('nextBtn').disabled = false;
+  }
+
+  function showEnd() {
+    stopTimer();
+    document.getElementById('playBox').style.display = 'none';
+    document.getElementById('endBox').style.display = 'block';
+    const emoji = correctCount >= 8 ? '🏆' : correctCount >= 5 ? '⭐' : '💪';
+    const text = correctCount >= 8
+      ? `太厉害了！10 题里答对了 ${correctCount} 题！`
+      : correctCount >= 5
+        ? `做得不错！答对了 ${correctCount} 题，再来一次试试看。`
+        : `加油！答对了 ${correctCount} 题，多看看加减法表再来挑战吧。`;
+    document.getElementById('endEmoji').textContent = emoji;
+    document.getElementById('endText').textContent = text;
+    speak(text);
+  }
+</script>
+</body>
+</html>
